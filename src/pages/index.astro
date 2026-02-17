@@ -1,17 +1,20 @@
 ---
+import Layout from '../layouts/Layout.astro';
+// Nota: Si estás en src/pages/contacto.astro, usa '../layouts/Layout.astro'
 
+const title = "Página en construcción | NicoCodes Electricidad";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={title}>
+  <main class="container mx-auto px-4 py-20 text-center">
+    <h1 class="text-4xl font-display font-bold text-primary-dark mb-4">
+      Página en Construcción
+    </h1>
+    <p class="text-neutral-dark text-lg mb-8">
+      Estamos preparando el contenido de esta sección.
+    </p>
+    <a href="/" class="bg-accent text-white px-6 py-3 rounded-lg font-bold hover:bg-accent-light transition-colors">
+      Volver al Inicio
+    </a>
+  </main>
+</Layout>

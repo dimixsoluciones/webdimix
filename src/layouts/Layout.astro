@@ -1,0 +1,46 @@
+---
+// Importamos las fuentes instaladas
+import '@fontsource/inter';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/poppins';
+import '@fontsource/poppins/600.css'; // Semibold para títulos
+import '@fontsource/poppins/700.css'; // Bold para héroes
+import '@fontsource/roboto-mono';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Electricistas autorizados en Madrid. Instalaciones, averías y climatización." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-neutral-white text-neutral-dark font-sans antialiased">
+		<slot />
+		</body>
+</html>
+
+<style is:global>
+	/* Estilos globales y utilidades */
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Poppins', sans-serif;
+		color: #003264; /* primary-dark por defecto en títulos */
+	}
+
+	/* Utilidad para forzar números tabulares en precios (Alineación perfecta)  */
+	.tabular-nums {
+		font-variant-numeric: tabular-nums;
+		font-family: 'Roboto Mono', monospace;
+	}
+</style>
