@@ -1,0 +1,77 @@
+---
+const services = [
+  {
+    title: "Instalaciones Eléctricas",
+    desc: "Diseño y ejecución completa para viviendas, locales y naves. Cumplimiento normativo garantizado.",
+    icon: "ti-bolt",
+    href: "/servicios/instalaciones/comerciales"
+  },
+  {
+    title: "Energía Fotovoltaica",
+    desc: "Ahorra en tu factura de luz. Instalación, legalización y tramitación de subvenciones incluidas.",
+    icon: "ti-sun",
+    href: "/servicios/renovables/placas-solares"
+  },
+  {
+    title: "Cuadros Eléctricos",
+    desc: "Actualización y montaje con protecciones de última generación. Seguridad certificada.",
+    icon: "ti-box",
+    href: "/servicios/mantenimiento/cuadros-electricos"
+  },
+  {
+    title: "Reformas Eléctricas",
+    desc: "Renovamos instalaciones antiguas adaptándolas a la normativa actual. Aumenta la seguridad.",
+    icon: "ti-home-cog",
+    href: "/servicios/instalaciones/viviendas"
+  },
+  {
+    title: "Climatización Eficiente",
+    desc: "Aire acondicionado y aerotermia. Confort todo el año con equipos de alta eficiencia energética.",
+    icon: "ti-air-conditioning",
+    href: "/servicios/renovables/aerotermia"
+  },
+  {
+    title: "CCTV y Antenas",
+    desc: "Sistemas de videovigilancia profesionales y montaje de antenas TDT/satélite. Protección total.",
+    icon: "ti-camera-selfie",
+    href: "/servicios/instalaciones/cctv-antenas"
+  }
+];
+---
+
+<section id="servicios" class="py-20 bg-neutral-white">
+  <div class="container mx-auto px-6">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-primary-dark mb-4">
+        Servicios que Cubren Todas tus Necesidades
+      </h2>
+      <p class="text-neutral-dark text-lg font-sans">
+        En Dimix Soluciones combinamos técnica y profesionalidad para ofrecerte resultados seguros y eficientes.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <a 
+          href={service.href}
+          class="group bg-white p-8 rounded-2xl border border-neutral-light shadow-sm hover:shadow-xl hover:border-primary-light/30 transition-all duration-300 transform hover:-translate-y-2"
+        >
+          <div class="w-14 h-14 bg-primary-soft rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+            <i class={`ti ${service.icon} text-3xl text-primary group-hover:text-white`}></i>
+          </div>
+          <h3 class="text-xl font-display font-bold text-primary-dark mb-3">
+            {service.title}
+          </h3>
+          <p class="text-neutral-dark text-sm leading-relaxed mb-6 font-sans">
+            {service.desc}
+          </p>
+          <span class="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-4 transition-all">
+            Saber más <i class="ti ti-arrow-right"></i>
+          </span>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>

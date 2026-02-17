@@ -1,4 +1,7 @@
 ---
+//Importacion de estilos
+import '../styles/global.css'; 
+
 // Importamos las fuentes instaladas
 import '@fontsource/inter';
 import '@fontsource/inter/500.css';
@@ -7,6 +10,12 @@ import '@fontsource/poppins';
 import '@fontsource/poppins/600.css'; // Semibold para títulos
 import '@fontsource/poppins/700.css'; // Bold para héroes
 import '@fontsource/roboto-mono';
+
+//Importacion de componentes´
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Services from '../components/Services.astro';
+import Hero from '../components/Hero.astro';
 
 interface Props {
 	title: string;
@@ -24,9 +33,14 @@ const { title, description = "Electricistas autorizados en Madrid. Instalaciones
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 		<title>{title}</title>
 	</head>
 	<body class="bg-neutral-white text-neutral-dark font-sans antialiased">
+		<Header />
+		<Hero />
+		<Services />
+		<Footer />
 		<slot />
 		</body>
 </html>

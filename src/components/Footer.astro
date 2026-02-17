@@ -1,0 +1,77 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-primary-dark text-white pt-16 pb-8 mt-auto">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      
+      <div class="col-span-1 md:col-span-1">
+        <h3 class="text-2xl font-display font-bold mb-6">
+          Dimix <span class="text-accent">Soluciones</span>
+        </h3>
+        <p class="text-neutral-light/70 text-sm leading-relaxed mb-6 font-sans">
+          Expertos en instalaciones eléctricas y climatización en Madrid. 
+          Soluciones integrales con garantía profesional para hogares y empresas[cite: 26, 27].
+        </p>
+        <div class="flex flex-col gap-3">
+          <span class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent-light">
+            <i class="ti ti-shield-check text-lg"></i> Instalador Autorizado
+          </span>
+          <span class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary-light">
+            <i class="ti ti-certificate text-lg"></i> Normativa REBT [cite: 59]
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-bold mb-6 text-lg">Servicios</h4>
+        <ul class="space-y-4 text-sm text-neutral-light/80">
+          <li><a href="/servicios/instalaciones" class="hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-bolt"></i> Electricidad General</a></li>
+          <li><a href="/servicios/renovables/placas-solares" class="hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-sun"></i> Energía Fotovoltaica</a></li>
+          <li><a href="/servicios/renovables/aerotermia" class="hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-air-conditioning"></i> Climatización</a></li>
+          <li><a href="/servicios/mantenimiento/urgencias-24h" class="hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-alert-triangle text-orange-400"></i> Urgencias 24h</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-bold mb-6 text-lg">Contacto</h4>
+        <ul class="space-y-4 text-sm text-neutral-light/80">
+          <li class="flex items-start gap-3">
+            <i class="ti ti-map-pin text-accent text-xl"></i>
+            <span>Madrid, Comunidad de Madrid</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="ti ti-phone text-accent text-xl"></i>
+            <a href="tel:+34600000000" class="hover:text-white transition-colors font-mono font-bold">+34 600 000 000</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="ti ti-mail text-accent text-xl"></i>
+            <a href="mailto:info@dimixsoluciones.com" class="hover:text-white transition-colors">info@dimixsoluciones.com</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-display font-bold mb-6 text-lg">Empresa</h4>
+        <ul class="space-y-4 text-sm text-neutral-light/80">
+          <li><a href="/empresa" class="hover:text-accent transition-colors">Sobre Nosotros</a></li>
+          <li><a href="/empresa/constructoras" class="hover:text-accent transition-colors font-bold">B2B Constructoras</a></li>
+          <li><a href="/legal/privacidad" class="hover:text-accent transition-colors">Política de Privacidad</a></li>
+          <li><a href="/legal/cookies" class="hover:text-accent transition-colors">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-neutral-light/50 font-mono">
+        &copy; {currentYear} Dimix Soluciones. Todos los derechos reservados.
+      </p>
+      <div class="flex gap-6">
+        <a href="#" class="text-neutral-light/50 hover:text-white transition-colors"><i class="ti ti-brand-instagram text-xl"></i></a>
+        <a href="#" class="text-neutral-light/50 hover:text-white transition-colors"><i class="ti ti-brand-linkedin text-xl"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>

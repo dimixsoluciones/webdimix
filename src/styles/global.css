@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@theme {
+  /* --- COLORES --- */
+  
+  /* Paleta Azul (Primary) */
+  --color-primary: #0045AA;
+  --color-primary-dark: #003264;
+  --color-primary-light: #42BCF4;
+  --color-primary-soft: #E8F4FA;
+
+  /* Paleta Naranja (Accent) */
+  --color-accent: #E57200;
+  --color-accent-light: #FF8C42;
+  --color-accent-soft: #FFF3E0;
+
+  /* Neutros */
+  --color-neutral-white: #FFFFFF;
+  --color-neutral-light: #F5F5F5;
+  --color-neutral-dark: #666666;
+  --color-neutral-black: #1A1A1A;
+
+  /* Estados */
+  --color-status-success: #28A745;
+  --color-status-warning: #FFC107;
+  --color-status-error: #DC3545;
+
+  /* --- FUENTES --- */
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Poppins", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+}
+
+/* Utilidad para números tabulares (Precios alineados) */
+@utility tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-family: "Roboto Mono", monospace;
+}
