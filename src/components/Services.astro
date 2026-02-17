@@ -1,76 +1,99 @@
 ---
 const services = [
   {
+    title: "Reparaciones y Averías",
+    desc: "Solución rápida a apagones y cortocircuitos.",
+    img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2000&auto=format&fit=crop",
+    href: "/servicios/mantenimiento/urgencias-24h"
+  },
+  {
     title: "Instalaciones Eléctricas",
-    desc: "Diseño y ejecución completa para viviendas, locales y naves. Cumplimiento normativo garantizado.",
-    icon: "ti-bolt",
-    href: "/servicios/instalaciones/comerciales"
-  },
-  {
-    title: "Energía Fotovoltaica",
-    desc: "Ahorra en tu factura de luz. Instalación, legalización y tramitación de subvenciones incluidas.",
-    icon: "ti-sun",
-    href: "/servicios/renovables/placas-solares"
-  },
-  {
-    title: "Cuadros Eléctricos",
-    desc: "Actualización y montaje con protecciones de última generación. Seguridad certificada.",
-    icon: "ti-box",
-    href: "/servicios/mantenimiento/cuadros-electricos"
-  },
-  {
-    title: "Reformas Eléctricas",
-    desc: "Renovamos instalaciones antiguas adaptándolas a la normativa actual. Aumenta la seguridad.",
-    icon: "ti-home-cog",
+    desc: "Cableado completo para obra nueva y reformas.",
+    img: "https://images.unsplash.com/photo-1544724569-5f546fd6dd2d?q=80&w=2000&auto=format&fit=crop",
     href: "/servicios/instalaciones/viviendas"
   },
   {
-    title: "Climatización Eficiente",
-    desc: "Aire acondicionado y aerotermia. Confort todo el año con equipos de alta eficiencia energética.",
-    icon: "ti-air-conditioning",
-    href: "/servicios/renovables/aerotermia"
+    title: "Cuadros Eléctricos",
+    desc: "Actualización a normativa y aumento de potencia.",
+    img: "https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=2000&auto=format&fit=crop",
+    href: "/servicios/mantenimiento/cuadros-electricos"
   },
   {
-    title: "CCTV y Antenas",
-    desc: "Sistemas de videovigilancia profesionales y montaje de antenas TDT/satélite. Protección total.",
-    icon: "ti-camera-selfie",
-    href: "/servicios/instalaciones/cctv-antenas"
+    title: "Iluminación LED",
+    desc: "Proyectos de eficiencia energética y diseño.",
+    img: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?q=80&w=2000&auto=format&fit=crop",
+    href: "/servicios/instalaciones/iluminacion-domotica"
+  },
+  {
+    title: "Placas Solares",
+    desc: "Instalación fotovoltaica para autoconsumo.",
+    img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2000&auto=format&fit=crop",
+    href: "/servicios/renovables/placas-solares"
+  },
+  {
+    title: "Cargadores Vehículo",
+    desc: "Puntos de recarga para garajes y empresas.",
+    img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2000&auto=format&fit=crop",
+    href: "/servicios/renovables/cargadores-ve"
   }
 ];
 ---
 
-<section id="servicios" class="py-20 bg-neutral-white">
-  <div class="container mx-auto px-6">
+<section id="servicios" class="py-24 bg-white text-dark-bg">
+  <div class="container mx-auto max-w-7xl px-8 lg:px-20">
     
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-3xl md:text-4xl font-display font-bold text-primary-dark mb-4">
-        Servicios que Cubren Todas tus Necesidades
-      </h2>
-      <p class="text-neutral-dark text-lg font-sans">
-        En Dimix Soluciones combinamos técnica y profesionalidad para ofrecerte resultados seguros y eficientes.
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      <div class="max-w-2xl">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-0.5 bg-accent"></span>
+          <span class="text-accent font-bold tracking-[0.2em] uppercase text-sm">Nuestros Servicios</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-dark-bg uppercase leading-tight">
+          Soluciones Técnicas <br/>Integrales
+        </h2>
+      </div>
+      <p class="max-w-md text-gray-600 text-lg leading-relaxed text-right md:text-left hidden md:block border-l-2 border-gray-200 pl-6">
+        Cubrimos todas las necesidades eléctricas con garantía certificada y cumplimiento del REBT.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {services.map((service) => (
-        <a 
-          href={service.href}
-          class="group bg-white p-8 rounded-2xl border border-neutral-light shadow-sm hover:shadow-xl hover:border-primary-light/30 transition-all duration-300 transform hover:-translate-y-2"
-        >
-          <div class="w-14 h-14 bg-primary-soft rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-            <i class={`ti ${service.icon} text-3xl text-primary group-hover:text-white`}></i>
+        <a href={service.href} class="group relative h-[400px] w-full rounded-2xl overflow-hidden shadow-lg cursor-pointer block">
+          
+          <div class="absolute inset-0 bg-gray-900">
+            <img 
+              src={service.img} 
+              alt={service.title} 
+              class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-100"
+            />
           </div>
-          <h3 class="text-xl font-display font-bold text-primary-dark mb-3">
-            {service.title}
-          </h3>
-          <p class="text-neutral-dark text-sm leading-relaxed mb-6 font-sans">
-            {service.desc}
-          </p>
-          <span class="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-4 transition-all">
-            Saber más <i class="ti ti-arrow-right"></i>
-          </span>
+          
+          <div class="absolute bottom-0 left-0 w-[90%] bg-dark-bg p-6 rounded-tr-[2rem] border-t border-r border-gray-700/50 transition-all duration-300 group-hover:bg-accent group-hover:border-accent">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-white font-display font-bold text-xl mb-1 group-hover:text-white">
+                  {service.title}
+                </h3>
+                <p class="text-gray-400 text-xs leading-relaxed group-hover:text-white/90">
+                  {service.desc}
+                </p>
+              </div>
+              <div class="bg-gray-700/50 p-2 rounded-full text-white group-hover:bg-white group-hover:text-accent transition-colors">
+                 <i class="ti ti-arrow-up-right"></i>
+              </div>
+            </div>
+          </div>
+
         </a>
       ))}
+    </div>
+
+    <div class="mt-16 text-center">
+      <a href="/servicios" class="inline-flex items-center gap-2 font-bold text-dark-bg border-b-2 border-accent pb-1 hover:text-accent transition-colors">
+        Ver todos los servicios
+        <i class="ti ti-arrow-right"></i>
+      </a>
     </div>
 
   </div>

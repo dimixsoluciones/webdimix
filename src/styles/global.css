@@ -1,38 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  /* --- COLORES --- */
+  /* --- PALETA INDUSTRIAL DARK --- */
   
-  /* Paleta Azul (Primary) */
-  --color-primary: #0045AA;
-  --color-primary-dark: #003264;
-  --color-primary-light: #42BCF4;
-  --color-primary-soft: #E8F4FA;
+  /* Tu Naranja Corporativo (Sustituye al amarillo de la plantilla) */
+  --color-accent: #E57200;      
+  --color-accent-hover: #CC6500;
 
-  /* Paleta Naranja (Accent) */
-  --color-accent: #E57200;
-  --color-accent-light: #FF8C42;
-  --color-accent-soft: #FFF3E0;
+  /* Fondos Oscuros Premium */
+  --color-dark-bg: #111827;     /* Fondo General (Gray 900) */
+  --color-dark-card: #1F2937;   /* Fondo Tarjetas (Gray 800) */
+  --color-dark-border: #374151; /* Bordes sutiles */
 
-  /* Neutros */
-  --color-neutral-white: #FFFFFF;
-  --color-neutral-light: #F5F5F5;
-  --color-neutral-dark: #666666;
-  --color-neutral-black: #1A1A1A;
+  /* Textos */
+  --color-text-white: #F9FAFB;  /* Blanco casi puro */
+  --color-text-muted: #9CA3AF;  /* Gris para párrafos */
 
-  /* Estados */
-  --color-status-success: #28A745;
-  --color-status-warning: #FFC107;
-  --color-status-error: #DC3545;
-
-  /* --- FUENTES --- */
+  /* Tipografías */
   --font-sans: "Inter", sans-serif;
-  --font-display: "Poppins", sans-serif;
-  --font-mono: "Roboto Mono", monospace;
+  --font-display: "Poppins", sans-serif; /* Para los títulos grandes */
 }
 
-/* Utilidad para números tabulares (Precios alineados) */
-@utility tabular-nums {
-  font-variant-numeric: tabular-nums;
-  font-family: "Roboto Mono", monospace;
+/* Estilos Globales para el Modo Oscuro */
+body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-white);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }

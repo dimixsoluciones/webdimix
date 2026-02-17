@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  bgImage?: string;
+}
+
+const { 
+  title, 
+  subtitle = "Soluciones Profesionales", 
+  bgImage = "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" 
+} = Astro.props;
+---
+
+<section class="relative pt-28 pb-12 lg:pt-36 lg:pb-16 overflow-hidden bg-dark-bg">
+  <div class="absolute inset-0 z-0">
+    <img src={bgImage} alt="Fondo" class="w-full h-full object-cover opacity-20" />
+    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/80 to-dark-bg/90"></div>
+  </div>
+
+  <div class="container mx-auto px-8 lg:px-20 relative z-10 text-center">
+    <span class="text-accent font-bold tracking-[0.2em] uppercase text-sm mb-4 block animate-fadeIn">
+      {subtitle}
+    </span>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white uppercase mb-6 animate-slideUp">
+      {title}
+    </h1>
+    
+    <div class="flex justify-center items-center gap-2 text-sm text-gray-400 font-medium">
+      <a href="/" class="hover:text-white transition-colors">Inicio</a>
+      <span class="text-accent">•</span>
+      <span class="text-white">{title}</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .animate-fadeIn { animation: fadeIn 1s ease-out; }
+  .animate-slideUp { animation: slideUp 0.8s ease-out; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>

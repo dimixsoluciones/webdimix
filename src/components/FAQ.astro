@@ -1,0 +1,87 @@
+---
+const faqs = [
+  {
+    question: "¿Cobráis por el desplazamiento o el presupuesto?",
+    answer: "El presupuesto es totalmente gratuito y sin compromiso. En cuanto al desplazamiento, no lo cobramos si se acepta el trabajo. Si solo necesitas un diagnóstico y decides no reparar, se aplicará una tarifa mínima por la visita técnica."
+  },
+  {
+    question: "¿Atendéis urgencias de noche o fines de semana?",
+    answer: "Sí, tenemos un equipo de guardia disponible las 24 horas, los 365 días del año. Entendemos que un apagón o un cortocircuito no puede esperar, por lo que garantizamos asistencia inmediata en menos de 1 hora."
+  },
+  {
+    question: "¿Entregáis Boletines Eléctricos (CIE)?",
+    answer: "Por supuesto. Somos instaladores autorizados por el Ministerio de Industria. Podemos emitir, firmar y tramitar Boletines Eléctricos (blancos y azules) para aumentos de potencia, altas nuevas o cambios de titularidad."
+  },
+  {
+    question: "¿Qué garantía tienen las reparaciones?",
+    answer: "Todas nuestras instalaciones y reparaciones cuentan con una garantía mínima de 6 meses en mano de obra y 2 años en materiales, tal y como marca la ley. Si surge cualquier problema derivado de nuestro trabajo, volvemos y lo solucionamos sin coste."
+  },
+  {
+    question: "¿Trabajáis en toda la Comunidad de Madrid?",
+    answer: "Sí, cubrimos los 179 municipios de la Comunidad de Madrid. Tenemos unidades móviles distribuidas estratégicamente para llegar rápido tanto al centro de Madrid como a las zonas periféricas y sierra."
+  }
+];
+---
+
+<section id="faq" class="py-24 bg-white text-dark-bg">
+  <div class="container mx-auto max-w-4xl px-8 lg:px-20">
+    
+    <div class="text-center mb-16">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="w-8 h-0.5 bg-accent"></span>
+        <span class="text-accent font-bold tracking-[0.2em] uppercase text-sm">Dudas Comunes</span>
+        <span class="w-8 h-0.5 bg-accent"></span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-dark-bg uppercase leading-tight">
+        Preguntas Frecuentes
+      </h2>
+      <p class="text-gray-500 mt-4 text-lg">
+        Resolvemos las dudas principales antes de que nos llames. Transparencia total.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group bg-gray-50 rounded-2xl border border-gray-200 open:border-accent/50 open:bg-white open:shadow-lg transition-all duration-300">
+          
+          <summary class="flex justify-between items-center p-6 cursor-pointer list-none select-none">
+            <h3 class="text-xl font-bold font-display text-dark-bg group-hover:text-accent transition-colors">
+              {faq.question}
+            </h3>
+            <span class="bg-white border border-gray-200 rounded-full p-2 group-open:bg-accent group-open:text-white group-open:rotate-180 transition-all duration-300">
+              <i class="ti ti-chevron-down"></i>
+            </span>
+          </summary>
+          
+          <div class="px-6 pb-6 pt-0 text-gray-600 leading-relaxed border-t border-transparent group-open:border-gray-100 group-open:pt-4 animate-fadeIn">
+            <p>{faq.answer}</p>
+          </div>
+
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center bg-dark-bg text-white p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-left">
+        <h4 class="text-xl font-bold mb-1">¿Tienes otra pregunta?</h4>
+        <p class="text-gray-400 text-sm">Nuestro equipo te atiende por WhatsApp al instante.</p>
+      </div>
+      <a href="https://wa.me/34600000000" class="bg-accent hover:bg-accent-hover text-white px-8 py-3 rounded-full font-bold transition-all flex items-center gap-2 whitespace-nowrap">
+        <i class="ti ti-brand-whatsapp text-xl"></i>
+        Preguntar ahora
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Animación suave para la aparición del texto */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+</style>

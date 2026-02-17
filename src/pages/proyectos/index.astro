@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Contact from '../../components/Contact.astro';
+import { projects } from '../../data/projects';
+
+// Obtenemos las categorías únicas para los botones
+const categories = ['Todos', ...new Set(projects.map(p => p.category))];
+---
+
+<Layout title="Proyectos Realizados | Dimix Soluciones">
+  <Header />
+  
+  <main class="bg-dark-bg min-h-screen">
+    <PageHeader 
+      title="Nuestros Proyectos" 
+      subtitle="Calidad que habla por sí sola"
+      bgImage="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2000&auto=format&fit=crop"
+    />
+
+    <section class="py-20 text-white relative">
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+      <div class="container mx-auto max-w-7xl px-8 lg:px-20 relative z-10">
+        
+        <div class="flex flex-wrap gap-4 mb-16 justify-center" id="filters">
+          {categories.map((cat) => (
+            <button 
+              class={`filter-btn px-8 py-3 rounded-full border border-gray-700 font-bold text-sm uppercase tracking-wider transition-all duration-300 
+              ${cat === 'Todos' ? 'bg-accent border-accent text-white shadow-lg shadow-accent/20' : 'text-gray-400 hover:text-white hover:border-white'}`}
+              data-filter={cat}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+          {projects.map((project) => (
+            <a 
+              href={`/proyectos/${project.id}`} 
+              class="project-card group relative block h-[400px] rounded-[2rem] overflow-hidden border border-gray-800 hover:border-accent transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              data-category={project.category}
+            >
+              
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+              />
+              
+              <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent"></div>
+
+              <div class="absolute top-6 right-6">
+                <span class="bg-dark-bg/80 backdrop-blur border border-gray-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-accent">
+                    {project.category}
+                </span>
+              </div>
+
+              <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-2xl font-display font-bold text-white mb-2 leading-tight group-hover:text-accent transition-colors">
+                  {project.title}
+                </h3>
+                <p class="text-gray-400 text-sm line-clamp-2 mb-4 group-hover:text-white transition-colors">
+                  {project.description}
+                </p>
+                <div class="flex items-center gap-2 text-sm font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+                  Ver Detalles Completo <i class="ti ti-arrow-right text-accent"></i>
+                </div>
+              </div>
+
+            </a>
+          ))}
+        </div>
+        
+        <div id="no-results" class="hidden text-center py-20">
+            <p class="text-gray-500 text-xl">No hay proyectos en esta categoría.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Script de Filtrado (Vanilla JS)
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  const noResults = document.getElementById('no-results');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 1. Gestionar estilos de botones (Activo/Inactivo)
+      buttons.forEach(b => {
+        b.classList.remove('bg-accent', 'border-accent', 'text-white', 'shadow-lg', 'shadow-accent/20');
+        b.classList.add('text-gray-400', 'border-gray-700');
+      });
+      btn.classList.remove('text-gray-400', 'border-gray-700');
+      btn.classList.add('bg-accent', 'border-accent', 'text-white', 'shadow-lg', 'shadow-accent/20');
+
+      // 2. Filtrar tarjetas
+      const filterValue = btn.getAttribute('data-filter');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        
+        if (filterValue === 'Todos' || category === filterValue) {
+          (card as HTMLElement).style.display = 'block';
+          // Pequeña animación de entrada
+          card.classList.remove('opacity-0', 'scale-95');
+          card.classList.add('opacity-100', 'scale-100');
+          visibleCount++;
+        } else {
+          (card as HTMLElement).style.display = 'none';
+          card.classList.add('opacity-0', 'scale-95');
+          card.classList.remove('opacity-100', 'scale-100');
+        }
+      });
+
+      // 3. Mostrar mensaje si no hay resultados
+      if (noResults) {
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    });
+  });
+</script>

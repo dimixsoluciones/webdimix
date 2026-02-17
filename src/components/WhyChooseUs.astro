@@ -1,0 +1,78 @@
+---
+const features = [
+  {
+    title: "Respuesta Rápida",
+    desc: "Sabemos que las averías no avisan. Llegamos antes que nadie para solucionar tu urgencia.",
+    icon: "ti-clock-bolt",
+    href: "/contacto"
+  },
+  {
+    title: "Expertos Certificados",
+    desc: "Electricistas autorizados con carnet de instalador. Tu seguridad es innegociable.",
+    icon: "ti-certificate",
+    href: "/empresa"
+  },
+  {
+    title: "Seguridad Primero",
+    desc: "Cumplimos estrictamente la normativa REBT. Instalaciones seguras para tu familia o negocio.",
+    icon: "ti-shield-lock",
+    href: "/servicios"
+  },
+  {
+    title: "Precios Claros",
+    desc: "Sin sorpresas ni letra pequeña. Presupuesto cerrado antes de empezar a trabajar.",
+    icon: "ti-wallet",
+    href: "/contacto"
+  }
+];
+---
+
+<section class="py-24 bg-white text-dark-bg">
+  <div class="container mx-auto max-w-7xl px-8 lg:px-20">
+    
+    <div class="flex flex-col md:flex-row justify-between items-start mb-16 gap-10">
+      <div class="w-full md:w-1/2">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-0.5 bg-accent"></span>
+          <span class="text-accent font-bold tracking-[0.2em] uppercase text-sm">Por Qué Elegirnos</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-dark-bg uppercase leading-tight">
+          Fiables, Rápidos <br/>y Eficientes
+        </h2>
+      </div>
+      <div class="w-full md:w-1/2">
+        <p class="text-gray-600 text-lg leading-relaxed border-l-2 border-gray-200 pl-6">
+          Entendemos que cuando hay un problema eléctrico, necesitas soluciones efectivas, no excusas. 
+          Nuestro equipo combina destreza técnica con una atención al cliente de primera.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {features.map((feature) => (
+        <div class="group p-10 rounded-[2rem] border border-gray-200 hover:border-accent/30 hover:shadow-xl transition-all duration-300 bg-gray-50/50 hover:bg-white relative overflow-hidden">
+          
+          <div class="w-14 h-14 bg-dark-bg text-white rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-accent transition-colors duration-300 shadow-lg">
+            <i class={`ti ${feature.icon}`}></i>
+          </div>
+
+          <h3 class="text-2xl font-display font-bold text-dark-bg mb-4">
+            {feature.title}
+          </h3>
+          
+          <p class="text-gray-600 leading-relaxed mb-8">
+            {feature.desc}
+          </p>
+
+          <a href={feature.href} class="inline-flex items-center gap-2 font-bold text-accent hover:text-dark-bg transition-colors uppercase text-sm tracking-wider">
+            Saber más
+            <i class="ti ti-arrow-right"></i>
+          </a>
+
+          <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-accent/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

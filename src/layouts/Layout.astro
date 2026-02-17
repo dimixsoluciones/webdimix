@@ -1,60 +1,22 @@
 ---
-//Importacion de estilos
-import '../styles/global.css'; 
-
-// Importamos las fuentes instaladas
+import '../styles/global.css';
 import '@fontsource/inter';
-import '@fontsource/inter/500.css';
-import '@fontsource/inter/600.css';
 import '@fontsource/poppins';
-import '@fontsource/poppins/600.css'; // Semibold para títulos
-import '@fontsource/poppins/700.css'; // Bold para héroes
-import '@fontsource/roboto-mono';
 
-//Importacion de componentes´
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Services from '../components/Services.astro';
-import Hero from '../components/Hero.astro';
-
-interface Props {
-	title: string;
-	description?: string;
-}
-
-const { title, description = "Electricistas autorizados en Madrid. Instalaciones, averías y climatización." } = Astro.props;
+// Importamos iconos Tabler para toda la web
 ---
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-		<title>{title}</title>
+		<title>Dimix Soluciones | Electricistas en Madrid</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 	</head>
-	<body class="bg-neutral-white text-neutral-dark font-sans antialiased">
-		<Header />
-		<Hero />
-		<Services />
-		<Footer />
+	<body class="bg-dark-bg text-text-white antialiased selection:bg-accent selection:text-white">
 		<slot />
-		</body>
+	</body>
 </html>
-
-<style is:global>
-	/* Estilos globales y utilidades */
-	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Poppins', sans-serif;
-		color: #003264; /* primary-dark por defecto en títulos */
-	}
-
-	/* Utilidad para forzar números tabulares en precios (Alineación perfecta)  */
-	.tabular-nums {
-		font-variant-numeric: tabular-nums;
-		font-family: 'Roboto Mono', monospace;
-	}
-</style>

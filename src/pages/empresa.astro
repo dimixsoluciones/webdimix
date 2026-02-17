@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageHeader from '../components/PageHeader.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import Contact from '../components/Contact.astro';
+
+// Datos para la sección de valores
+const values = [
+  {
+    title: "Seguridad Certificada",
+    desc: "El cumplimiento de la normativa REBT no es opcional. Cada instalación se revisa rigurosamente para garantizar la seguridad de personas y bienes.",
+    icon: "ti-shield-check"
+  },
+  {
+    title: "Innovación Energética",
+    desc: "Apostamos por el ahorro. Implementamos tecnología LED, domótica y sistemas fotovoltaicos para reducir la factura de nuestros clientes.",
+    icon: "ti-bulb"
+  },
+  {
+    title: "Transparencia Total",
+    desc: "Sin letra pequeña. Presupuestos detallados por partidas y comunicación fluida durante todo el proyecto.",
+    icon: "ti-file-description"
+  }
+];
+---
+
+<Layout title="Sobre Nosotros | Dimix Soluciones - Electricistas en Madrid">
+  <Header />
+  
+  <main>
+    <PageHeader 
+      title="Nuestra Empresa" 
+      subtitle="Líderes en Electricidad y Clima"
+    />
+
+    <section class="py-24 bg-white text-dark-bg">
+      <div class="container mx-auto max-w-7xl px-8 lg:px-20">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          
+          <div class="w-full lg:w-1/2 space-y-6">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-dark-bg uppercase">
+              Más de una década iluminando <span class="text-accent">Madrid</span>
+            </h2>
+            <div class="space-y-4 text-gray-600 text-lg leading-relaxed text-justify">
+              <p>
+                En <strong>Dimix Soluciones</strong>, somos mucho más que una empresa de reparaciones. Somos un equipo técnico cualificado dedicado a la ingeniería, instalación y mantenimiento de sistemas eléctricos y de climatización en toda la <strong>Comunidad de Madrid</strong>.
+              </p>
+              <p>
+                Nacimos con una misión clara: profesionalizar el sector ofreciendo un servicio técnico que combina la <strong>rapidez de las urgencias 24h</strong> con la precisión de la ingeniería moderna. Desde pequeñas reformas domésticas hasta grandes proyectos industriales, aplicamos los mismos estándares de calidad y seguridad.
+              </p>
+              <p>
+                Como <strong>Instaladores Autorizados por el Ministerio de Industria</strong>, garantizamos que cada cable, cuadro o panel solar cumple estrictamente con el Reglamento Electrotécnico para Baja Tensión (REBT). Tu seguridad es nuestra firma.
+              </p>
+            </div>
+            
+            <div class="pt-6 flex items-center gap-4">
+              <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-accent">
+                <p class="font-display font-bold text-dark-bg">Gerencia Dimix</p>
+                <p class="text-xs text-gray-500 uppercase">Dirección Técnica</p>
+              </div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Firma_ficticia.svg" alt="Firma" class="h-12 opacity-50" />
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/2 relative">
+            <div class="relative rounded-[2rem] overflow-hidden shadow-2xl group">
+              <img 
+                src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2000&auto=format&fit=crop" 
+                alt="Equipo de electricistas Dimix trabajando en cuadro eléctrico" 
+                class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div class="absolute bottom-0 left-0 bg-dark-bg p-8 rounded-tr-[2rem] max-w-xs">
+                <p class="text-white font-bold text-xl mb-2">Compromiso Dimix</p>
+                <p class="text-gray-400 text-sm">"No damos un trabajo por finalizado hasta que el sistema es 100% seguro y eficiente."</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-dark-bg text-white relative">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+      <div class="container mx-auto max-w-7xl px-8 lg:px-20 relative z-10">
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+          <span class="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">Filosofía Corporativa</span>
+          <h2 class="text-3xl md:text-4xl font-display font-bold uppercase">
+            Lo que nos diferencia
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {values.map((item) => (
+            <div class="bg-dark-card p-8 rounded-2xl border border-gray-700 hover:border-accent transition-colors duration-300 group">
+              <div class="w-14 h-14 bg-dark-bg rounded-xl flex items-center justify-center text-accent text-3xl mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                <i class={`ti ${item.icon}`}></i>
+              </div>
+              <h3 class="text-xl font-bold font-display mb-4 text-white">{item.title}</h3>
+              <p class="text-gray-400 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <WhyChooseUs />
+    <Contact />
+
+  </main>
+
+  <Footer />
+</Layout>

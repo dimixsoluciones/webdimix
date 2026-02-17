@@ -1,77 +1,78 @@
 ---
 ---
 
-<section class="relative bg-primary-soft overflow-hidden">
-  <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary-light/10 rounded-full blur-3xl"></div>
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-dark-bg">
+  
+  <div class="absolute left-0 top-1/3 hidden lg:grid grid-cols-2 gap-2 opacity-10">
+    {Array(16).fill(0).map(() => <div class="w-1.5 h-1.5 bg-white rounded-full"></div>)}
+  </div>
 
-  <div class="container mx-auto px-6 py-16 md:py-24 lg:py-32 flex flex-col-reverse md:flex-row items-center gap-12 relative z-10">
-    
-    <div class="w-full md:w-1/2 space-y-8 text-center md:text-left">
+  <div class="container mx-auto max-w-7xl px-8 lg:px-20 relative z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
       
-      <div class="space-y-4">
-        <span class="inline-block py-1 px-4 rounded-full bg-white text-primary-dark font-bold text-xs uppercase tracking-widest border border-primary/10 shadow-sm">
-          <i class="ti ti-map-pin-filled text-accent"></i> Servicio en Madrid y alrededores
-        </span>
+      <div class="w-full lg:w-1/2 space-y-8">
+        
+        <div class="flex items-center gap-4">
+          <span class="w-12 h-0.5 bg-accent"></span>
+          <span class="text-accent font-bold tracking-[0.2em] uppercase text-sm">Electricistas en Madrid</span>
+        </div>
 
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-dark leading-[1.1]">
-          Instalaciones Eléctricas y Climatización con <span class="text-accent">Garantía Profesional</span>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-[1.1] uppercase">
+          Soluciones <br />
+          Eléctricas <br />
+          <span class="text-accent">Confiables</span>
         </h1>
 
-        <p class="text-lg text-neutral-dark font-sans max-w-xl mx-auto md:mx-0 leading-relaxed">
-          Soluciones completas para tu hogar o proyecto de construcción. 
-          <span class="block mt-2 font-semibold text-primary-dark text-xl underline decoration-accent/30">Presupuesto sin compromiso en 24h.</span>
+        <p class="text-gray-400 text-lg max-w-lg font-sans leading-relaxed border-l-2 border-gray-700 pl-6">
+          Expertos en instalaciones y reparaciones urgentes. 
+          Resultados rápidos, seguros y eficientes para tu hogar o negocio.
         </p>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a 
+            href="tel:+34600000000" 
+            class="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-bold transition-all flex items-center gap-3 shadow-[0_0_20px_rgba(229,114,0,0.3)] hover:shadow-[0_0_30px_rgba(229,114,0,0.5)]"
+          >
+            <i class="ti ti-phone-calling text-xl"></i>
+            600 000 000
+          </a>
+          
+          <a 
+            href="#servicios" 
+            class="group px-8 py-4 rounded-full font-bold text-white border border-gray-600 hover:border-white transition-all flex items-center gap-2"
+          >
+            Ver Servicios
+            <i class="ti ti-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
-        <a 
-          href="#contacto" 
-          class="bg-accent hover:bg-accent-light text-white text-center px-10 py-5 rounded-xl font-bold text-lg shadow-xl shadow-accent/20 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
-        >
-          Solicitar Presupuesto Gratis
-          <i class="ti ti-arrow-right"></i>
-        </a>
-      </div>
-      
-      <div class="flex flex-wrap items-center gap-6 justify-center md:justify-start text-sm text-neutral-dark/80 font-medium">
-        <span class="flex items-center gap-2"><i class="ti ti-circle-check text-green-500 text-xl"></i> Instalador Autorizado</span>
-        <span class="flex items-center gap-2"><i class="ti ti-clock-check text-primary text-xl"></i> Respuesta en 24h</span>
-      </div>
-    </div>
+      <div class="w-full lg:w-1/2 relative">
+        <div class="absolute -right-4 top-10 hidden lg:grid grid-cols-2 gap-2 opacity-20 z-0">
+          {Array(24).fill(0).map(() => <div class="w-1.5 h-1.5 bg-gray-500 rounded-full"></div>)}
+        </div>
 
-    <div class="w-full md:w-1/2 relative">
-      <div class="relative rounded-3xl overflow-hidden shadow-2xl border-[12px] border-white group">
-        <img 
-          src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" 
-          alt="Técnico profesional trabajando en cuadro eléctrico moderno" 
-          class="w-full h-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700"
-        />
-        
-        <div class="absolute top-6 right-6 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-2xl shadow-lg border border-primary/5 flex items-center gap-3">
-          <div class="bg-primary-soft p-2 rounded-full">
-            <i class="ti ti-shield-check text-primary text-2xl"></i>
+        <div class="relative z-10 rounded-[2.5rem] overflow-hidden border-4 border-gray-800 shadow-2xl group h-[500px] lg:h-[600px]">
+          <img 
+            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" 
+            alt="Técnico electricista Dimix" 
+            class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105 filter brightness-90 group-hover:brightness-100"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+          <div class="absolute bottom-8 left-8 bg-accent p-6 rounded-2xl shadow-xl flex flex-col gap-1 items-start max-w-[180px]">
+             <i class="ti ti-certificate text-4xl text-white mb-2"></i>
+             <span class="text-3xl font-display font-bold text-white leading-none">100%</span>
+             <span class="text-white/90 text-xs uppercase font-bold tracking-wider leading-tight">Garantía Profesional</span>
           </div>
-          <div>
-            <p class="text-xs text-neutral-dark font-bold">100% Seguro</p>
-            <p class="text-[10px] text-gray-400 uppercase tracking-tighter">Cumplimiento REBT</p>
+
+          <div class="absolute bottom-8 right-8 bg-dark-card/90 backdrop-blur p-3 rounded-full lg:rounded-xl border border-gray-700 flex items-center gap-3 pr-5">
+            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse ml-1"></div>
+            <span class="text-xs font-bold text-white uppercase tracking-wider hidden lg:block">Disponible 24h</span>
           </div>
         </div>
       </div>
 
-      <div class="absolute -bottom-6 -left-6 bg-accent p-4 rounded-2xl shadow-lg hidden lg:block animate-bounce-slow">
-         <i class="ti ti-bolt text-white text-3xl"></i>
-      </div>
     </div>
-
   </div>
 </section>
-
-<style>
-  @keyframes bounce-slow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-  .animate-bounce-slow {
-    animation: bounce-slow 4s ease-in-out infinite;
-  }
-</style>
