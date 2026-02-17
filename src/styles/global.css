@@ -3,25 +3,21 @@
 @theme {
   /* --- PALETA INDUSTRIAL DARK --- */
   
-  /* Tu Naranja Corporativo (Sustituye al amarillo de la plantilla) */
   --color-accent: #E57200;      
   --color-accent-hover: #CC6500;
 
-  /* Fondos Oscuros Premium */
-  --color-dark-bg: #111827;     /* Fondo General (Gray 900) */
-  --color-dark-card: #1F2937;   /* Fondo Tarjetas (Gray 800) */
-  --color-dark-border: #374151; /* Bordes sutiles */
+  --color-dark-bg: #111827;
+  --color-dark-card: #1F2937;
+  --color-dark-border: #374151;
 
-  /* Textos */
-  --color-text-white: #F9FAFB;  /* Blanco casi puro */
-  --color-text-muted: #9CA3AF;  /* Gris para párrafos */
+  --color-text-white: #F9FAFB;
+  --color-text-muted: #9CA3AF;
 
-  /* Tipografías */
   --font-sans: "Inter", sans-serif;
-  --font-display: "Poppins", sans-serif; /* Para los títulos grandes */
+  --font-display: "Poppins", sans-serif;
 }
 
-/* Estilos Globales para el Modo Oscuro */
+/* Estilos Globales */
 body {
   background-color: var(--color-dark-bg);
   color: var(--color-text-white);
@@ -30,4 +26,43 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
+}
+
+/* ── UTILIDADES CUSTOM TAILWIND V4 ── */
+
+@utility bg-accent {
+  background-color: var(--color-accent);
+}
+@utility bg-accent-hover {
+  background-color: var(--color-accent-hover);
+}
+@utility bg-dark-bg {
+  background-color: var(--color-dark-bg);
+}
+@utility bg-dark-card {
+  background-color: var(--color-dark-card);
+}
+@utility bg-dark-border {
+  background-color: var(--color-dark-border);
+}
+
+@utility text-accent {
+  color: var(--color-accent);
+}
+@utility text-muted {
+  color: var(--color-text-muted);
+}
+
+@utility border-accent {
+  border-color: var(--color-accent);
+}
+@utility border-dark-border {
+  border-color: var(--color-dark-border);
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+@utility font-sans {
+  font-family: var(--font-sans);
 }

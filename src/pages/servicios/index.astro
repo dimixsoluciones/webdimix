@@ -1,0 +1,555 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { services } from '../../data/services';
+
+const categorias = [
+  {
+    id: 'instalaciones',
+    label: 'Instalaciones',
+    icon: 'ti-home',
+    desc: 'Proyectos eléctricos completos para viviendas y locales',
+    slugPrefix: 'instalaciones',
+  },
+  {
+    id: 'mantenimiento',
+    label: 'Mantenimiento',
+    icon: 'ti-tool',
+    desc: 'Urgencias, reparaciones y actualización de cuadros',
+    slugPrefix: 'mantenimiento',
+  },
+  {
+    id: 'renovables',
+    label: 'Renovables',
+    icon: 'ti-sun',
+    desc: 'Energía solar y movilidad eléctrica sostenible',
+    slugPrefix: 'renovables',
+  },
+];
+
+const servicesByCategory = categorias.map(cat => ({
+  ...cat,
+  items: services.filter(s => s.slug.startsWith(cat.slugPrefix)),
+}));
+---
+
+<Layout title="Servicios de Electricidad en Madrid | Dimix Soluciones">
+  <Header />
+
+  <main style="background-color: var(--color-dark-bg); color: var(--color-text-white);">
+    <div class="servicios-page">
+
+      <!-- PANEL IZQUIERDO -->
+      <aside class="left-panel">
+
+        <div class="left-top">
+          <span class="left-badge"><i class="ti ti-bolt"></i> Servicios</span>
+          <h1 class="left-title">¿Qué necesitas?</h1>
+          <p class="left-sub">Selecciona una categoría para ver todos los servicios disponibles.</p>
+        </div>
+
+        <nav class="cat-nav">
+          {categorias.map((cat, i) => (
+            <button
+              class={`cat-btn ${i === 0 ? 'active' : ''}`}
+              data-cat={cat.id}
+              type="button"
+            >
+              <div class="cat-btn-icon">
+                <i class={`ti ${cat.icon}`}></i>
+              </div>
+              <div class="cat-btn-info">
+                <span class="cat-btn-label">{cat.label}</span>
+                <span class="cat-btn-desc">{cat.desc}</span>
+              </div>
+              <i class="ti ti-chevron-right cat-btn-arrow"></i>
+            </button>
+          ))}
+        </nav>
+
+        <div class="left-bottom">
+          <p class="left-bottom-text">¿Dudas? Llámanos</p>
+          <a href="tel:+34600000000" class="left-call-btn">
+            <i class="ti ti-phone"></i> 600 000 000
+          </a>
+        </div>
+
+      </aside>
+
+      <!-- PANEL DERECHO -->
+      <div class="right-panel">
+        {servicesByCategory.map((cat, i) => (
+          <div
+            class={`cat-panel ${i === 0 ? 'active' : ''}`}
+            data-panel={cat.id}
+          >
+            <!-- Cabecera panel -->
+            <div class="panel-header">
+              <div>
+                <p class="panel-label">{cat.label}</p>
+                <h2 class="panel-title">{cat.desc}</h2>
+              </div>
+              <span class="panel-count">{cat.items.length} servicio{cat.items.length !== 1 ? 's' : ''}</span>
+            </div>
+
+            <!-- Grid de servicios -->
+            <div class="panel-grid">
+              {cat.items.map((service, j) => (
+                <a
+                  href={`/servicios/${service.slug}`}
+                  class="svc-card"
+                  style={`--i: ${j}`}
+                >
+                  <div class="svc-img-wrap">
+                    <img src={service.image} alt={service.title} class="svc-img" />
+                    <div class="svc-img-overlay"></div>
+                    <div class="svc-icon">
+                      <i class={`ti ${service.icon}`}></i>
+                    </div>
+                  </div>
+                  <div class="svc-body">
+                    <p class="svc-subtitle">{service.subtitle}</p>
+                    <h3 class="svc-title">{service.title}</h3>
+                    <p class="svc-desc">{service.description.slice(0, 90)}...</p>
+                    <div class="svc-features">
+                      {service.features.slice(0, 2).map(f => (
+                        <span class="svc-feature">
+                          <i class="ti ti-check"></i> {f}
+                        </span>
+                      ))}
+                    </div>
+                    <div class="svc-cta">
+                      Ver más <i class="ti ti-arrow-right"></i>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll('.cat-btn');
+  const panels = document.querySelectorAll('.cat-panel');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-cat');
+
+      buttons.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      document.querySelector(`[data-panel="${cat}"]`)?.classList.add('active');
+    });
+  });
+</script>
+
+<style>
+/* ── LAYOUT GENERAL ── */
+.servicios-page {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+/* ── PANEL IZQUIERDO ── */
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  background: #0F1724;
+  border-right: 1px solid #1F2937;
+  overflow-y: auto;
+  padding: 2.5rem 1.75rem;
+}
+
+.left-top {
+  margin-bottom: 2rem;
+}
+
+.left-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(229,114,0,0.3);
+  background: rgba(229,114,0,0.07);
+  color: var(--color-accent);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.left-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+}
+
+.left-sub {
+  font-size: 0.825rem;
+  color: #6B7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Navegación categorías */
+.cat-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.cat-btn:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: #374151;
+}
+
+.cat-btn.active {
+  background: rgba(229,114,0,0.1);
+  border-color: rgba(229,114,0,0.3);
+}
+
+.cat-btn-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #1F2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  font-size: 1.25rem;
+  transition: all 0.2s;
+}
+
+.cat-btn.active .cat-btn-icon {
+  background: rgba(229,114,0,0.15);
+  color: var(--color-accent);
+}
+
+.cat-btn-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cat-btn-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #9CA3AF;
+  margin-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.cat-btn.active .cat-btn-label {
+  color: white;
+}
+
+.cat-btn-desc {
+  display: block;
+  font-size: 0.75rem;
+  color: #4B5563;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cat-btn-arrow {
+  font-size: 0.75rem;
+  color: #374151;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.cat-btn.active .cat-btn-arrow {
+  color: var(--color-accent);
+  transform: translateX(3px);
+}
+
+/* Bottom del panel */
+.left-bottom {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #1F2937;
+}
+
+.left-bottom-text {
+  font-size: 0.75rem;
+  color: #4B5563;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.left-call-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  background: var(--color-accent);
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.left-call-btn:hover {
+  background: var(--color-accent-hover);
+}
+
+/* ── PANEL DERECHO ── */
+.right-panel {
+  overflow-y: auto;
+  background: var(--color-dark-bg);
+  position: relative;
+}
+
+.cat-panel {
+  display: none;
+  padding: 2.5rem;
+  height: 100%;
+  box-sizing: border-box;
+  animation: fadeIn 0.25s ease;
+}
+
+.cat-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #1F2937;
+}
+
+.panel-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-accent);
+  margin: 0 0 4px 0;
+}
+
+.panel-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.panel-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #4B5563;
+  padding: 5px 12px;
+  border: 1px solid #1F2937;
+  border-radius: 100px;
+}
+
+/* ── GRID DE CARDS ── */
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── CARD SERVICIO ── */
+.svc-card {
+  display: flex;
+  flex-direction: column;
+  background: #1F2937;
+  border-radius: 14px;
+  border: 1px solid #374151;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  animation: cardIn 0.35s ease both;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+.svc-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(229,114,0,0.35);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.svc-img-wrap {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.svc-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.svc-card:hover .svc-img {
+  transform: scale(1.05);
+}
+
+.svc-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17,24,39,0.85) 0%, transparent 70%);
+}
+
+.svc-icon {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(229,114,0,0.4);
+}
+
+.svc-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.svc-subtitle {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-accent);
+  margin: 0 0 4px 0;
+}
+
+.svc-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 8px 0;
+}
+
+.svc-desc {
+  font-size: 0.8rem;
+  color: #9CA3AF;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  flex: 1;
+}
+
+.svc-features {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 1rem;
+}
+
+.svc-feature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #6B7280;
+}
+
+.svc-feature i {
+  color: var(--color-accent);
+  font-size: 10px;
+}
+
+.svc-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  padding-top: 0.75rem;
+  border-top: 1px solid #374151;
+}
+
+/* ── RESPONSIVE MÓVIL ── */
+@media (max-width: 768px) {
+  .servicios-page {
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow: visible;
+  }
+  .left-panel {
+    height: auto;
+    overflow: visible;
+    padding: 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid #1F2937;
+  }
+  .right-panel {
+    overflow: visible;
+    height: auto;
+  }
+  .cat-panel {
+    height: auto;
+    padding: 1.5rem;
+  }
+  .panel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

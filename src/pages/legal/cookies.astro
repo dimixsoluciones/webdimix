@@ -1,0 +1,298 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Política de Cookies | Dimix Soluciones">
+  <Header />
+  <main style="background-color: var(--color-dark-bg); color: var(--color-text-white);">
+    <div class="legal-page">
+      <div class="legal-sidebar">
+        <p class="sidebar-label">En esta página</p>
+        <nav class="sidebar-nav">
+          <a href="#que-son" class="sidebar-link">¿Qué son las cookies?</a>
+          <a href="#tipos" class="sidebar-link">Tipos de cookies</a>
+          <a href="#tabla" class="sidebar-link">Cookies utilizadas</a>
+          <a href="#gestion" class="sidebar-link">Cómo gestionarlas</a>
+          <a href="#actualizacion" class="sidebar-link">Actualización</a>
+        </nav>
+        <div class="sidebar-links-quick">
+          <a href="/legal/aviso-legal" class="sidebar-quick-link">Aviso Legal →</a>
+          <a href="/legal/privacidad" class="sidebar-quick-link">Política de Privacidad →</a>
+        </div>
+      </div>
+
+      <article class="legal-content">
+        <div class="legal-header">
+          <span class="legal-badge">Legal</span>
+          <h1 class="legal-title">Política de Cookies</h1>
+          <p class="legal-date">Última actualización: enero 2025</p>
+        </div>
+
+        <section id="que-son" class="legal-section">
+          <h2>1. ¿Qué son las cookies?</h2>
+          <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Se utilizan ampliamente para que los sitios web funcionen correctamente, para mejorar la experiencia del usuario y para proporcionar información a los propietarios del sitio.</p>
+          <p>De conformidad con la Ley 34/2002 de Servicios de la Sociedad de la Información (LSSICE) y el Reglamento General de Protección de Datos (RGPD), le informamos sobre el uso de cookies en este sitio web.</p>
+        </section>
+
+        <section id="tipos" class="legal-section">
+          <h2>2. Tipos de cookies</h2>
+          <p>Las cookies pueden clasificarse según:</p>
+          <ul>
+            <li><strong>Su titularidad:</strong> propias (gestionadas por nosotros) o de terceros (gestionadas por un tercero).</li>
+            <li><strong>Su duración:</strong> de sesión (se eliminan al cerrar el navegador) o persistentes (permanecen durante un tiempo determinado).</li>
+            <li><strong>Su finalidad:</strong> técnicas (necesarias para el funcionamiento), analíticas (estadísticas de uso) o de marketing (publicidad personalizada).</li>
+          </ul>
+        </section>
+
+        <section id="tabla" class="legal-section">
+          <h2>3. Cookies utilizadas en este sitio</h2>
+          <div class="cookies-table">
+            <div class="cookies-table-head">
+              <span>Cookie</span>
+              <span>Tipo</span>
+              <span>Duración</span>
+              <span>Finalidad</span>
+            </div>
+            <div class="cookies-table-row">
+              <span>_session</span>
+              <span>Propia</span>
+              <span>Sesión</span>
+              <span>Técnica — mantiene la sesión del usuario</span>
+            </div>
+            <div class="cookies-table-row">
+              <span>cookie_consent</span>
+              <span>Propia</span>
+              <span>12 meses</span>
+              <span>Técnica — guarda la preferencia de consentimiento</span>
+            </div>
+            <div class="cookies-table-row">
+              <span>_ga</span>
+              <span>Tercero (Google)</span>
+              <span>24 meses</span>
+              <span>Analítica — estadísticas de visitas anónimas</span>
+            </div>
+            <div class="cookies-table-row">
+              <span>_gid</span>
+              <span>Tercero (Google)</span>
+              <span>24 horas</span>
+              <span>Analítica — distingue usuarios únicos</span>
+            </div>
+          </div>
+          <p style="margin-top: 1rem; font-size: 0.85rem; color: #6B7280;">Las cookies analíticas de Google Analytics se utilizan de forma anónima y agregada. No se vinculan a datos personales identificables.</p>
+        </section>
+
+        <section id="gestion" class="legal-section">
+          <h2>4. Cómo gestionar las cookies</h2>
+          <p>Puede aceptar, rechazar o gestionar las cookies en cualquier momento a través del banner de consentimiento o desde la configuración de su navegador:</p>
+          <ul>
+            <li><strong>Chrome:</strong> Configuración → Privacidad y seguridad → Cookies.</li>
+            <li><strong>Firefox:</strong> Opciones → Privacidad y seguridad → Cookies.</li>
+            <li><strong>Safari:</strong> Preferencias → Privacidad → Cookies.</li>
+            <li><strong>Edge:</strong> Configuración → Privacidad, búsqueda y servicios → Cookies.</li>
+          </ul>
+          <p>Tenga en cuenta que deshabilitar algunas cookies puede afectar al funcionamiento del sitio web.</p>
+        </section>
+
+        <section id="actualizacion" class="legal-section">
+          <h2>5. Actualización de la política</h2>
+          <p>Dimix Soluciones se reserva el derecho a modificar esta Política de Cookies para adaptarla a novedades legislativas o cambios en las cookies utilizadas. Le recomendamos revisarla periódicamente.</p>
+          <p>Para cualquier consulta relacionada con el uso de cookies, puede contactarnos en <strong>info@dimixsoluciones.com</strong>.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+  <Footer />
+
+<style>
+.legal-page {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  max-width: 1200px;
+  margin: 80px auto 0;
+  padding: 6rem clamp(1.5rem, 4vw, 4rem) 5rem;
+  gap: 4rem;
+  align-items: start;
+}
+.legal-sidebar {
+  position: sticky;
+  top: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.sidebar-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #4B5563;
+  margin: 0;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sidebar-link {
+  display: block;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #6B7280;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-left: 2px solid transparent;
+}
+.sidebar-link:hover {
+  color: white;
+  background: rgba(255,255,255,0.04);
+  border-left-color: var(--color-accent);
+  padding-left: 16px;
+}
+.sidebar-links-quick {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 1rem;
+  border-top: 1px solid #1F2937;
+}
+.sidebar-quick-link {
+  font-size: 0.8rem;
+  color: #4B5563;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.sidebar-quick-link:hover { color: var(--color-accent); }
+.legal-content { min-width: 0; }
+.legal-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #1F2937;
+}
+.legal-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(229,114,0,0.3);
+  background: rgba(229,114,0,0.07);
+  color: var(--color-accent);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+.legal-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+.legal-date {
+  font-size: 0.85rem;
+  color: #4B5563;
+  margin: 0;
+}
+.legal-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 7rem;
+}
+.legal-section h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-accent);
+}
+.legal-section p {
+  color: #9CA3AF;
+  line-height: 1.8;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+}
+.legal-section ul {
+  color: #9CA3AF;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.legal-section strong { color: #D1D5DB; font-weight: 600; }
+.data-table {
+  background: #1F2937;
+  border-radius: 12px;
+  border: 1px solid #374151;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.data-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  border-bottom: 1px solid #374151;
+}
+.data-row:last-child { border-bottom: none; }
+.data-key {
+  padding: 10px 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(55,65,81,0.3);
+}
+.data-val { padding: 10px 16px; font-size: 0.9rem; color: #D1D5DB; }
+.cookies-table {
+  background: #1F2937;
+  border-radius: 12px;
+  border: 1px solid #374151;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.cookies-table-head {
+  display: grid;
+  grid-template-columns: 140px 110px 90px 1fr;
+  padding: 10px 16px;
+  background: rgba(55,65,81,0.5);
+  border-bottom: 1px solid #374151;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6B7280;
+  gap: 1rem;
+}
+.cookies-table-row {
+  display: grid;
+  grid-template-columns: 140px 110px 90px 1fr;
+  padding: 10px 16px;
+  border-bottom: 1px solid #374151;
+  font-size: 0.85rem;
+  color: #9CA3AF;
+  gap: 1rem;
+  align-items: center;
+}
+.cookies-table-row:last-child { border-bottom: none; }
+@media (max-width: 768px) {
+  .legal-page {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 5rem;
+  }
+  .legal-sidebar { position: static; }
+  .sidebar-nav { flex-direction: row; flex-wrap: wrap; gap: 4px; }
+  .sidebar-link { border-left: none; border: 1px solid #374151; border-radius: 100px; padding: 5px 12px; }
+  .sidebar-link:hover { padding-left: 12px; }
+  .sidebar-links-quick { flex-direction: row; flex-wrap: wrap; padding-top: 0; border-top: none; }
+  .data-row { grid-template-columns: 120px 1fr; }
+  .cookies-table-head, .cookies-table-row { grid-template-columns: 1fr 1fr; }
+}
+</style>
+
+</Layout>

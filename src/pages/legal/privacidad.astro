@@ -1,0 +1,288 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Política de Privacidad | Dimix Soluciones">
+  <Header />
+  <main style="background-color: var(--color-dark-bg); color: var(--color-text-white);">
+    <div class="legal-page">
+      <div class="legal-sidebar">
+        <p class="sidebar-label">En esta página</p>
+        <nav class="sidebar-nav">
+          <a href="#responsable" class="sidebar-link">Responsable</a>
+          <a href="#datos" class="sidebar-link">Datos que recogemos</a>
+          <a href="#finalidad" class="sidebar-link">Finalidad</a>
+          <a href="#legitimacion" class="sidebar-link">Legitimación</a>
+          <a href="#derechos" class="sidebar-link">Tus derechos</a>
+          <a href="#conservacion" class="sidebar-link">Conservación</a>
+        </nav>
+        <div class="sidebar-links-quick">
+          <a href="/legal/aviso-legal" class="sidebar-quick-link">Aviso Legal →</a>
+          <a href="/legal/cookies" class="sidebar-quick-link">Política de Cookies →</a>
+        </div>
+      </div>
+
+      <article class="legal-content">
+        <div class="legal-header">
+          <span class="legal-badge">Legal</span>
+          <h1 class="legal-title">Política de Privacidad</h1>
+          <p class="legal-date">Última actualización: enero 2025</p>
+        </div>
+
+        <section id="responsable" class="legal-section">
+          <h2>1. Responsable del tratamiento</h2>
+          <div class="data-table">
+            <div class="data-row"><span class="data-key">Responsable</span><span class="data-val">Dimix Soluciones</span></div>
+            <div class="data-row"><span class="data-key">CIF/NIF</span><span class="data-val">XXXXXXXXX</span></div>
+            <div class="data-row"><span class="data-key">Dirección</span><span class="data-val">Madrid, España</span></div>
+            <div class="data-row"><span class="data-key">Email</span><span class="data-val">info@dimixsoluciones.com</span></div>
+          </div>
+        </section>
+
+        <section id="datos" class="legal-section">
+          <h2>2. Datos que recogemos</h2>
+          <p>A través de los formularios de contacto de este sitio web, podemos recopilar los siguientes datos personales:</p>
+          <ul>
+            <li>Nombre y apellidos</li>
+            <li>Dirección de correo electrónico</li>
+            <li>Número de teléfono</li>
+            <li>Mensaje y descripción del servicio solicitado</li>
+          </ul>
+          <p>No recogemos datos especialmente protegidos ni datos de menores de 14 años de forma consciente.</p>
+        </section>
+
+        <section id="finalidad" class="legal-section">
+          <h2>3. Finalidad del tratamiento</h2>
+          <p>Los datos personales facilitados a través del formulario de contacto se utilizan exclusivamente para:</p>
+          <ul>
+            <li>Responder a las consultas y solicitudes de presupuesto enviadas.</li>
+            <li>Gestionar la relación comercial con nuestros clientes.</li>
+            <li>Enviar comunicaciones relacionadas con los servicios contratados.</li>
+          </ul>
+          <p>No utilizamos los datos para envío de publicidad no solicitada ni los cedemos a terceros salvo obligación legal.</p>
+        </section>
+
+        <section id="legitimacion" class="legal-section">
+          <h2>4. Legitimación</h2>
+          <p>La base legal para el tratamiento de sus datos es el consentimiento del interesado, otorgado en el momento de cumplimentar y enviar el formulario de contacto, de conformidad con el artículo 6.1.a del Reglamento General de Protección de Datos (RGPD).</p>
+          <p>Puede retirar su consentimiento en cualquier momento, aunque ello no afectará a la licitud del tratamiento previo a su retirada.</p>
+        </section>
+
+        <section id="derechos" class="legal-section">
+          <h2>5. Tus derechos</h2>
+          <p>De acuerdo con el RGPD y la Ley Orgánica 3/2018 de Protección de Datos, usted tiene derecho a:</p>
+          <ul>
+            <li><strong>Acceso:</strong> conocer qué datos personales suyos tratamos.</li>
+            <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos.</li>
+            <li><strong>Supresión:</strong> solicitar la eliminación de sus datos.</li>
+            <li><strong>Oposición:</strong> oponerse al tratamiento de sus datos.</li>
+            <li><strong>Portabilidad:</strong> recibir sus datos en formato estructurado.</li>
+            <li><strong>Limitación:</strong> solicitar la limitación del tratamiento.</li>
+          </ul>
+          <p>Para ejercer cualquiera de estos derechos, puede enviarnos un correo a <strong>info@dimixsoluciones.com</strong> indicando el derecho que desea ejercer y adjuntando una copia de su documento de identidad.</p>
+          <p>También tiene derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> si considera que el tratamiento de sus datos no es adecuado.</p>
+        </section>
+
+        <section id="conservacion" class="legal-section">
+          <h2>6. Conservación de los datos</h2>
+          <p>Los datos personales proporcionados se conservarán mientras exista una relación comercial activa o durante el tiempo necesario para cumplir con las obligaciones legales aplicables.</p>
+          <p>Una vez finalizada la relación y transcurridos los plazos legales, los datos serán eliminados de forma segura.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+  <Footer />
+
+<style>
+.legal-page {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  max-width: 1200px;
+  margin: 80px auto 0;
+  padding: 6rem clamp(1.5rem, 4vw, 4rem) 5rem;
+  gap: 4rem;
+  align-items: start;
+}
+.legal-sidebar {
+  position: sticky;
+  top: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.sidebar-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #4B5563;
+  margin: 0;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sidebar-link {
+  display: block;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #6B7280;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-left: 2px solid transparent;
+}
+.sidebar-link:hover {
+  color: white;
+  background: rgba(255,255,255,0.04);
+  border-left-color: var(--color-accent);
+  padding-left: 16px;
+}
+.sidebar-links-quick {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 1rem;
+  border-top: 1px solid #1F2937;
+}
+.sidebar-quick-link {
+  font-size: 0.8rem;
+  color: #4B5563;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.sidebar-quick-link:hover { color: var(--color-accent); }
+.legal-content { min-width: 0; }
+.legal-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #1F2937;
+}
+.legal-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(229,114,0,0.3);
+  background: rgba(229,114,0,0.07);
+  color: var(--color-accent);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+.legal-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+.legal-date {
+  font-size: 0.85rem;
+  color: #4B5563;
+  margin: 0;
+}
+.legal-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 7rem;
+}
+.legal-section h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-accent);
+}
+.legal-section p {
+  color: #9CA3AF;
+  line-height: 1.8;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+}
+.legal-section ul {
+  color: #9CA3AF;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.legal-section strong { color: #D1D5DB; font-weight: 600; }
+.data-table {
+  background: #1F2937;
+  border-radius: 12px;
+  border: 1px solid #374151;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.data-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  border-bottom: 1px solid #374151;
+}
+.data-row:last-child { border-bottom: none; }
+.data-key {
+  padding: 10px 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(55,65,81,0.3);
+}
+.data-val { padding: 10px 16px; font-size: 0.9rem; color: #D1D5DB; }
+.cookies-table {
+  background: #1F2937;
+  border-radius: 12px;
+  border: 1px solid #374151;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.cookies-table-head {
+  display: grid;
+  grid-template-columns: 140px 110px 90px 1fr;
+  padding: 10px 16px;
+  background: rgba(55,65,81,0.5);
+  border-bottom: 1px solid #374151;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6B7280;
+  gap: 1rem;
+}
+.cookies-table-row {
+  display: grid;
+  grid-template-columns: 140px 110px 90px 1fr;
+  padding: 10px 16px;
+  border-bottom: 1px solid #374151;
+  font-size: 0.85rem;
+  color: #9CA3AF;
+  gap: 1rem;
+  align-items: center;
+}
+.cookies-table-row:last-child { border-bottom: none; }
+@media (max-width: 768px) {
+  .legal-page {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 5rem;
+  }
+  .legal-sidebar { position: static; }
+  .sidebar-nav { flex-direction: row; flex-wrap: wrap; gap: 4px; }
+  .sidebar-link { border-left: none; border: 1px solid #374151; border-radius: 100px; padding: 5px 12px; }
+  .sidebar-link:hover { padding-left: 12px; }
+  .sidebar-links-quick { flex-direction: row; flex-wrap: wrap; padding-top: 0; border-top: none; }
+  .data-row { grid-template-columns: 120px 1fr; }
+  .cookies-table-head, .cookies-table-row { grid-template-columns: 1fr 1fr; }
+}
+</style>
+
+</Layout>

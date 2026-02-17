@@ -1,0 +1,245 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Contact from '../../components/Contact.astro';
+---
+
+<Layout title="Instalaciones Seguras según REBT | Dimix Soluciones">
+  <Header />
+  <main style="background-color: var(--color-dark-bg); color: var(--color-text-white);">
+
+    <!-- HERO -->
+    <div class="ep-hero">
+      <div class="ep-hero-inner">
+        <div class="animate-slideRight">
+          <span class="ep-badge"><i class="ti ti-shield-lock"></i> Reglamento Electrotécnico</span>
+          <h1 class="ep-title">Seguridad Primero</h1>
+          <p class="ep-subtitle">Normativa REBT</p>
+          <p class="ep-intro">El Reglamento Electrotécnico de Baja Tensión (REBT) es la normativa que regula todas las instalaciones eléctricas en España. En Dimix Soluciones no lo cumplimos por obligación — lo hacemos porque la seguridad de tu familia o negocio no es negociable.</p>
+          <div class="ep-actions">
+            <a href="tel:+34600000000" class="ep-btn-primary"><i class="ti ti-phone"></i> Llamar ahora</a>
+            <a href="/empresa" class="ep-btn-secondary"><i class="ti ti-arrow-left"></i> Volver a Empresa</a>
+          </div>
+        </div>
+      </div>
+      <div class="ep-hero-deco" aria-hidden="true">
+        <div class="ep-circle c1"></div>
+        <div class="ep-circle c2"></div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="ep-stats-bar">
+      <div class="ep-stat"><span class="ep-stat-num">REBT</span><span class="ep-stat-label">Cumplimiento 100% garantizado</span></div>
+      <div class="ep-stat"><span class="ep-stat-num">ITC-BT</span><span class="ep-stat-label">Todas las instrucciones técnicas</span></div>
+      <div class="ep-stat"><span class="ep-stat-num">0 accidentes</span><span class="ep-stat-label">En todos nuestros trabajos</span></div>
+      <div class="ep-stat"><span class="ep-stat-num">Garantía</span><span class="ep-stat-label">2 años en instalaciones nuevas</span></div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="ep-content">
+      <div class="ep-section">
+        <h2>¿Qué exige el REBT en una instalación doméstica?</h2>
+        <ul class="ep-list">
+          <li>Cuadro eléctrico con interruptor de control de potencia (ICP) e interruptores diferenciales.</li><li>Toma de tierra correctamente instalada y con resistencia homologada.</li><li>Cableado de sección adecuada para cada circuito, debidamente protegido.</li><li>Circuitos independientes para cocina, baños, iluminación y usos generales.</li><li>Protección contra sobretensiones en zonas con riesgo de tormentas.</li>
+        </ul>
+      </div>
+      <div class="ep-section">
+        <h2>Señales de que tu instalación no cumple la normativa</h2>
+        <ul class="ep-list">
+          <li>El diferencial salta con frecuencia al encender electrodomésticos.</li><li>Tienes un cuadro eléctrico antiguo de madera o sin protecciones modernas.</li><li>Los enchufes o interruptores están calientes o con marcas de quemado.</li><li>Tu instalación tiene más de 20 años y nunca ha sido revisada.</li><li>No tienes toma de tierra o no sabes si la tienes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+.ep-hero {
+  position: relative;
+  margin-top: 80px;
+  padding: 6rem clamp(1.5rem, 6vw, 6rem) 5rem;
+  border-bottom: 1px solid #1F2937;
+  overflow: hidden;
+}
+.ep-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+.ep-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(229,114,0,0.35);
+  background: rgba(229,114,0,0.08);
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.25rem;
+}
+.ep-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: white;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.ep-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.ep-intro {
+  font-size: 1.1rem;
+  color: #9CA3AF;
+  line-height: 1.8;
+  margin: 0 0 2.5rem 0;
+  max-width: 640px;
+}
+.ep-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ep-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: var(--color-accent);
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.ep-btn-primary:hover { background: #CC6500; transform: translateY(-2px); }
+.ep-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border: 1px solid #374151;
+  background: #1F2937;
+  color: #D1D5DB;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.ep-btn-secondary:hover { border-color: var(--color-accent); color: var(--color-accent); transform: translateY(-2px); }
+.ep-hero-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.ep-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(229,114,0,0.07);
+}
+.c1 { width: 600px; height: 600px; right: -200px; top: -200px; }
+.c2 { width: 350px; height: 350px; right: -30px; top: -30px; border-color: rgba(229,114,0,0.04); }
+
+/* STATS */
+.ep-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid #1F2937;
+}
+.ep-stat {
+  padding: 2rem;
+  text-align: center;
+  border-right: 1px solid #1F2937;
+}
+.ep-stat:last-child { border-right: none; }
+.ep-stat-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  display: block;
+  margin-bottom: 4px;
+}
+.ep-stat-label {
+  font-size: 0.8rem;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* CONTENIDO */
+.ep-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5rem clamp(1.5rem, 6vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.ep-section h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--color-accent);
+}
+.ep-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ep-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 1rem 1.25rem;
+  background: #1F2937;
+  border-radius: 10px;
+  border: 1px solid #374151;
+  color: #D1D5DB;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.ep-list li::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ep-stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .ep-stat { border-bottom: 1px solid #1F2937; }
+}
+@media (max-width: 480px) {
+  .ep-stats-bar { grid-template-columns: 1fr 1fr; }
+}
+
+.animate-slideRight {
+  animation: slideRight 0.8s ease-out forwards;
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+</style>
