@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Contact from '../components/Contact.astro';
+import ContactForm from '../components/Contact.astro'; // Renombramos para evitar confusión
+import { Icon } from 'astro-icon/components'; // <--- IMPORTANTE
 ---
 
 <Layout title="Contacto | Dimix Soluciones Madrid">
@@ -10,50 +11,65 @@ import Contact from '../components/Contact.astro';
 
   <main style="background-color: var(--color-dark-bg); color: var(--color-text-white);">
 
-    <!-- HERO -->
     <div class="contact-hero">
       <div class="contact-hero-inner">
-        <span class="contact-badge"><i class="ti ti-message"></i> Contacto</span>
+        
+        <span class="contact-badge">
+            <Icon name="tabler:message" /> Contacto
+        </span>
+        
         <h1 class="contact-title">Hablemos de<br/><span style="color: var(--color-accent);">tu proyecto.</span></h1>
+        
         <p class="contact-sub">
           Cuéntanos qué necesitas. Te respondemos en menos de 2 horas en horario laboral,
           o llámanos directamente si es urgente.
         </p>
 
-        <!-- Datos rápidos -->
         <div class="contact-quick">
-          <a href="tel:+34600000000" class="contact-quick-item">
-            <div class="contact-quick-icon"><i class="ti ti-phone"></i></div>
+          
+          <a href="tel:+34600000000" class="contact-quick-item group">
+            <div class="contact-quick-icon group-hover:text-white transition-colors">
+                <Icon name="tabler:phone" />
+            </div>
             <div>
               <span class="contact-quick-label">Teléfono / WhatsApp</span>
               <span class="contact-quick-val">600 000 000</span>
             </div>
           </a>
-          <a href="mailto:info@dimixsoluciones.com" class="contact-quick-item">
-            <div class="contact-quick-icon"><i class="ti ti-mail"></i></div>
+
+          <a href="mailto:info@dimixsoluciones.com" class="contact-quick-item group">
+            <div class="contact-quick-icon group-hover:text-white transition-colors">
+                <Icon name="tabler:mail" />
+            </div>
             <div>
               <span class="contact-quick-label">Email</span>
               <span class="contact-quick-val">info@dimixsoluciones.com</span>
             </div>
           </a>
+
           <div class="contact-quick-item">
-            <div class="contact-quick-icon"><i class="ti ti-map-pin"></i></div>
+            <div class="contact-quick-icon">
+                <Icon name="tabler:map-pin" />
+            </div>
             <div>
               <span class="contact-quick-label">Zona de servicio</span>
               <span class="contact-quick-val">Comunidad de Madrid</span>
             </div>
           </div>
+
           <div class="contact-quick-item">
-            <div class="contact-quick-icon"><i class="ti ti-clock"></i></div>
+            <div class="contact-quick-icon">
+                <Icon name="tabler:clock" />
+            </div>
             <div>
               <span class="contact-quick-label">Urgencias</span>
               <span class="contact-quick-val">24h / 365 días</span>
             </div>
           </div>
+
         </div>
       </div>
 
-      <!-- Decoración -->
       <div class="contact-deco" aria-hidden="true">
         <div class="deco-c1"></div>
         <div class="deco-c2"></div>
@@ -61,8 +77,7 @@ import Contact from '../components/Contact.astro';
       </div>
     </div>
 
-    <!-- FORMULARIO -->
-    <Contact />
+    <ContactForm />
 
   </main>
 
@@ -70,6 +85,7 @@ import Contact from '../components/Contact.astro';
 </Layout>
 
 <style>
+/* ── ESTILOS DEL HERO ── */
 .contact-hero {
   position: relative;
   margin-top: 80px;
@@ -134,8 +150,9 @@ import Contact from '../components/Contact.astro';
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.2s;
+  cursor: pointer;
 }
-a.contact-quick-item:hover {
+.contact-quick-item:hover {
   border-color: rgba(229,114,0,0.4);
   background: rgba(229,114,0,0.05);
 }
@@ -150,7 +167,7 @@ a.contact-quick-item:hover {
   align-items: center;
   justify-content: center;
   color: var(--color-accent);
-  font-size: 1.1rem;
+  font-size: 1.25rem; /* Ajustado para que el icono se vea bien */
 }
 
 .contact-quick-label {
