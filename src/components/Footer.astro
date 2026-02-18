@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components'; // Importamos el componente
 const currentYear = new Date().getFullYear();
 ---
 
@@ -18,13 +19,13 @@ const currentYear = new Date().getFullYear();
         
         <div class="flex gap-4">
           <a href="#" aria-label="Instagram" class="w-10 h-10 bg-dark-bg border border-gray-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-accent hover:bg-accent transition-all duration-300">
-            <i class="ti ti-brand-instagram"></i>
+            <Icon name="tabler:brand-instagram" class="text-xl" />
           </a>
           <a href="#" aria-label="LinkedIn" class="w-10 h-10 bg-dark-bg border border-gray-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-accent hover:bg-accent transition-all duration-300">
-            <i class="ti ti-brand-linkedin"></i>
+            <Icon name="tabler:brand-linkedin" class="text-xl" />
           </a>
           <a href="#" aria-label="Facebook" class="w-10 h-10 bg-dark-bg border border-gray-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-accent hover:bg-accent transition-all duration-300">
-            <i class="ti ti-brand-facebook"></i>
+            <Icon name="tabler:brand-facebook" class="text-xl" />
           </a>
         </div>
       </div>
@@ -35,11 +36,11 @@ const currentYear = new Date().getFullYear();
           Navegación
         </h4>
         <ul class="space-y-4">
-          <li><a href="/" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-chevron-right text-xs"></i> Inicio</a></li>
-          <li><a href="/empresa" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-chevron-right text-xs"></i> Empresa</a></li>
-          <li><a href="/proyectos" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-chevron-right text-xs"></i> Proyectos</a></li>
-          <li><a href="#contacto" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-chevron-right text-xs"></i> Contacto</a></li>
-          <li><a href="#faq" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-chevron-right text-xs"></i> FAQ</a></li>
+          <li><a href="/" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:chevron-right" class="text-xs" /> Inicio</a></li>
+          <li><a href="/empresa" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:chevron-right" class="text-xs" /> Empresa</a></li>
+          <li><a href="/proyectos" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:chevron-right" class="text-xs" /> Proyectos</a></li>
+          <li><a href="#contacto" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:chevron-right" class="text-xs" /> Contacto</a></li>
+          <li><a href="#faq" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:chevron-right" class="text-xs" /> FAQ</a></li>
         </ul>
       </div>
 
@@ -49,11 +50,11 @@ const currentYear = new Date().getFullYear();
           Servicios
         </h4>
         <ul class="space-y-4">
-          <li><a href="/servicios/mantenimiento/urgencias-24h" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-bolt text-accent"></i> Urgencias 24h</a></li>
-          <li><a href="/servicios/mantenimiento/cuadros-electricos" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-box"></i> Cuadros Eléctricos</a></li>
-          <li><a href="/servicios/instalaciones/viviendas" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-home"></i> Instalaciones</a></li>
-          <li><a href="/servicios/renovables/placas-solares" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-sun"></i> Placas Solares</a></li>
-          <li><a href="/servicios/renovables/cargadores-ve" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><i class="ti ti-car"></i> Cargadores VE</a></li>
+          <li><a href="/servicios/mantenimiento/urgencias-24h" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:bolt" class="text-accent text-lg" /> Urgencias 24h</a></li>
+          <li><a href="/servicios/mantenimiento/cuadros-electricos" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:box" class="text-lg" /> Cuadros Eléctricos</a></li>
+          <li><a href="/servicios/instalaciones/viviendas" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:home" class="text-lg" /> Instalaciones</a></li>
+          <li><a href="/servicios/renovables/placas-solares" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:sun" class="text-lg" /> Placas Solares</a></li>
+          <li><a href="/servicios/renovables/cargadores-ve" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:car" class="text-lg" /> Cargadores VE</a></li>
         </ul>
       </div>
 
@@ -65,7 +66,7 @@ const currentYear = new Date().getFullYear();
         <ul class="space-y-6">
           <li class="flex items-start gap-4">
             <div class="mt-1 bg-dark-bg p-2 rounded text-accent border border-gray-700">
-              <i class="ti ti-map-pin"></i>
+              <Icon name="tabler:map-pin" class="text-xl" />
             </div>
             <div>
               <span class="block text-xs text-gray-500 uppercase font-bold">Ubicación</span>
@@ -74,7 +75,7 @@ const currentYear = new Date().getFullYear();
           </li>
           <li class="flex items-start gap-4">
             <div class="mt-1 bg-dark-bg p-2 rounded text-accent border border-gray-700">
-              <i class="ti ti-phone"></i>
+              <Icon name="tabler:phone" class="text-xl" />
             </div>
             <div>
               <span class="block text-xs text-gray-500 uppercase font-bold">Urgencias</span>
@@ -83,7 +84,7 @@ const currentYear = new Date().getFullYear();
           </li>
           <li class="flex items-start gap-4">
             <div class="mt-1 bg-dark-bg p-2 rounded text-accent border border-gray-700">
-              <i class="ti ti-mail"></i>
+               <Icon name="tabler:mail" class="text-xl" />
             </div>
             <div>
               <span class="block text-xs text-gray-500 uppercase font-bold">Email</span>

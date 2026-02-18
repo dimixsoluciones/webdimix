@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Contact from '../../components/Contact.astro';
 import { services } from '../../data/services';
+import { Icon } from 'astro-icon/components'; // <--- IMPORTANTE
 
 export async function getStaticPaths() {
   return services.map((service) => ({
@@ -21,7 +22,6 @@ const otherServices = services.filter(s => s.slug !== service.slug);
 
   <main style="background-color: var(--color-dark-bg); color: var(--color-text-white);">
 
-    <!-- HERO -->
     <div style="position: relative; width: 100%; height: 360px; margin-top: 80px; overflow: hidden;">
       <img
         src={service.image}
@@ -32,7 +32,7 @@ const otherServices = services.filter(s => s.slug !== service.slug);
       <div style="position: absolute; inset: 0; display: flex; align-items: center; padding: 0 clamp(1.5rem, 5vw, 5rem);">
         <div class="animate-slideRight" style="max-width: 600px;">
           <span style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; margin-bottom: 12px; border-radius: 4px; border: 1px solid rgba(229,114,0,0.4); background: rgba(0,0,0,0.5); color: var(--color-accent); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px;">
-            <i class={`ti ${service.icon}`}></i> {service.subtitle}
+            <Icon name={service.icon} /> {service.subtitle}
           </span>
           <h1 style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; color: white; text-transform: uppercase; line-height: 1.1; margin: 0;">
             {service.title}
@@ -41,16 +41,12 @@ const otherServices = services.filter(s => s.slug !== service.slug);
       </div>
     </div>
 
-    <!-- CONTENIDO: wrapper externo -->
     <div class="page-wrapper">
 
-      <!-- GRID DE DOS COLUMNAS -->
       <div class="two-col-layout">
 
-        <!-- COLUMNA PRINCIPAL -->
         <div class="main-col">
 
-          <!-- Descripción -->
           <section class="content-section">
             <h2 class="section-title">Descripción del Servicio</h2>
             <p style="color: #D1D5DB; font-size: 1.05rem; line-height: 1.8; margin: 0;">
@@ -60,7 +56,7 @@ const otherServices = services.filter(s => s.slug !== service.slug);
               {service.features.map(feature => (
                 <div class="feature-card">
                   <div class="check-icon">
-                    <i class="ti ti-check"></i>
+                    <Icon name="tabler:check" />
                   </div>
                   <span style="font-size: 0.875rem; font-weight: 700; color: white;">{feature}</span>
                 </div>
@@ -68,13 +64,14 @@ const otherServices = services.filter(s => s.slug !== service.slug);
             </div>
           </section>
 
-          <!-- Cuándo necesitas -->
           <section class="content-section">
             <h3 class="section-subtitle">¿Cuándo necesitas este servicio?</h3>
             <div class="problems-grid">
               {service.commonProblems.map(problem => (
                 <div class="problem-card">
-                  <i class="ti ti-alert-circle" style="color: #6B7280; font-size: 1.5rem; display: block; margin-bottom: 12px;"></i>
+                  <div style="color: #6B7280; font-size: 1.5rem; display: block; margin-bottom: 12px;">
+                    <Icon name="tabler:alert-circle" />
+                  </div>
                   <h4 style="font-weight: 700; color: white; margin: 0 0 8px 0;">{problem.title}</h4>
                   <p style="font-size: 0.875rem; color: #9CA3AF; margin: 0;">{problem.desc}</p>
                 </div>
@@ -82,7 +79,6 @@ const otherServices = services.filter(s => s.slug !== service.slug);
             </div>
           </section>
 
-          <!-- Proceso -->
           <section class="content-section">
             <h3 class="section-subtitle">Nuestro Proceso de Trabajo</h3>
             <div style="display: flex; flex-direction: column; gap: 1rem;">
@@ -100,14 +96,12 @@ const otherServices = services.filter(s => s.slug !== service.slug);
 
         </div>
 
-        <!-- SIDEBAR -->
         <aside class="sidebar-col">
           <div class="sidebar-sticky">
 
-            <!-- CTA -->
             <div class="cta-card">
               <div class="cta-icon">
-                <i class={`ti ${service.icon}`}></i>
+                <Icon name={service.icon} />
               </div>
               <h3 style="font-size: 1.5rem; font-weight: 700; color: white; margin: 0 0 8px 0;">¿Te interesa?</h3>
               <p style="color: #9CA3AF; font-size: 0.875rem; margin: 0 0 1.5rem 0;">
@@ -115,21 +109,22 @@ const otherServices = services.filter(s => s.slug !== service.slug);
               </p>
               <div style="display: flex; flex-direction: column; gap: 12px;">
                 <a href="tel:+34600000000" class="btn-call">
-                  <i class="ti ti-phone"></i> Llamar Ahora
+                  <Icon name="tabler:phone" /> Llamar Ahora
                 </a>
                 <a href="https://wa.me/34600000000" class="btn-whatsapp">
-                  <i class="ti ti-brand-whatsapp"></i> WhatsApp
+                  <Icon name="tabler:brand-whatsapp" /> WhatsApp
                 </a>
               </div>
             </div>
 
-            <!-- Más servicios -->
             <div class="more-services">
               <div class="more-services-header">Más Servicios</div>
               {otherServices.map(s => (
                 <a href={"/servicios/" + s.slug} class="service-link">
                   <span style="font-size: 0.875rem;">{s.title}</span>
-                  <i class="ti ti-chevron-right" style="font-size: 0.75rem; color: var(--color-accent); flex-shrink: 0;"></i>
+                  <span style="font-size: 0.75rem; color: var(--color-accent); flex-shrink: 0;">
+                    <Icon name="tabler:chevron-right" />
+                  </span>
                 </a>
               ))}
             </div>

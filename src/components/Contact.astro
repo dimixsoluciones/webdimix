@@ -1,9 +1,10 @@
 ---
+import { Icon } from 'astro-icon/components'; // <--- IMPORTANTE
 ---
 
 <section id="contacto" class="py-24 bg-dark-bg text-white relative overflow-hidden">
   
-  <div class="absolute left-0 bottom-0 grid grid-cols-2 gap-2 opacity-5">
+  <div class="absolute left-0 bottom-0 grid grid-cols-2 gap-2 opacity-5 pointer-events-none" aria-hidden="true">
     {Array(20).fill(0).map(() => <div class="w-2 h-2 bg-white rounded-full"></div>)}
   </div>
 
@@ -31,7 +32,7 @@
           
           <a href="tel:+34600000000" class="flex items-center gap-6 group">
             <div class="w-14 h-14 bg-dark-card border border-gray-700 rounded-2xl flex items-center justify-center text-accent text-2xl group-hover:bg-accent group-hover:text-white transition-all duration-300">
-              <i class="ti ti-phone"></i>
+              <Icon name="tabler:phone" class="text-3xl" />
             </div>
             <div>
               <span class="block text-xs text-gray-500 uppercase tracking-wider font-bold">Llámanos 24h</span>
@@ -41,7 +42,7 @@
 
           <a href="mailto:info@dimixsoluciones.com" class="flex items-center gap-6 group">
             <div class="w-14 h-14 bg-dark-card border border-gray-700 rounded-2xl flex items-center justify-center text-accent text-2xl group-hover:bg-accent group-hover:text-white transition-all duration-300">
-              <i class="ti ti-mail"></i>
+              <Icon name="tabler:mail" class="text-3xl" />
             </div>
             <div>
               <span class="block text-xs text-gray-500 uppercase tracking-wider font-bold">Escríbenos</span>
@@ -51,7 +52,7 @@
 
           <div class="flex items-center gap-6 group">
             <div class="w-14 h-14 bg-dark-card border border-gray-700 rounded-2xl flex items-center justify-center text-accent text-2xl">
-              <i class="ti ti-map-pin"></i>
+              <Icon name="tabler:map-pin" class="text-3xl" />
             </div>
             <div>
               <span class="block text-xs text-gray-500 uppercase tracking-wider font-bold">Oficina Central</span>
@@ -102,7 +103,7 @@
                     <option value="Otro" class="bg-dark-bg">Otro / Consulta</option>
                   </select>
                   <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-400">
-                    <i class="ti ti-chevron-down"></i>
+                    <Icon name="tabler:chevron-down" class="text-xl" />
                   </div>
                 </div>
               </div>
@@ -118,8 +119,8 @@
                     <option value="+5000" class="bg-dark-bg">+5.000€ (Proyecto/Reforma)</option>
                     <option value="Desconocido" class="bg-dark-bg">No lo sé / A valorar</option>
                   </select>
-                   <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-400">
-                    <i class="ti ti-chevron-down"></i>
+                    <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-gray-400">
+                     <Icon name="tabler:chevron-down" class="text-xl" />
                   </div>
                 </div>
               </div>

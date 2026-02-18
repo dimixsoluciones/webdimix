@@ -5,8 +5,8 @@ import Footer from '../../components/Footer.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import Contact from '../../components/Contact.astro';
 import { projects } from '../../data/projects';
+import { Icon } from 'astro-icon/components'; // <--- IMPORTANTE
 
-// Obtenemos las categorías únicas para los botones
 const categories = ['Todos', ...new Set(projects.map(p => p.category))];
 ---
 
@@ -71,7 +71,8 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
                   {project.description}
                 </p>
                 <div class="flex items-center gap-2 text-sm font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity delay-100">
-                  Ver Detalles Completo <i class="ti ti-arrow-right text-accent"></i>
+                  Ver Detalles Completo 
+                  <Icon name="tabler:arrow-right" class="text-accent" />
                 </div>
               </div>
 
@@ -117,7 +118,6 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
         
         if (filterValue === 'Todos' || category === filterValue) {
           (card as HTMLElement).style.display = 'block';
-          // Pequeña animación de entrada
           card.classList.remove('opacity-0', 'scale-95');
           card.classList.add('opacity-100', 'scale-100');
           visibleCount++;

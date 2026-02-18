@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Contact from '../../components/Contact.astro';
 import { projects } from '../../data/projects';
+import { Icon } from 'astro-icon/components'; // <--- IMPORTANTE
 
 export async function getStaticPaths() {
   return projects.map((project) => ({
@@ -31,15 +32,15 @@ const { project } = Astro.props;
        <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-transparent sm:via-black/50"></div>
        
        <div class="absolute inset-0 container mx-auto px-8 lg:px-20 flex flex-col justify-center items-start">
-          <div class="animate-slideRight max-w-2xl relative z-10">
-            <span class="inline-flex items-center gap-2 px-3 py-1 mb-3 rounded border border-accent/30 bg-black/50 text-accent text-xs font-bold uppercase tracking-widest backdrop-blur-md">
-                <i class="ti ti-tag"></i> {project.category}
-            </span>
-            
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white uppercase leading-tight drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-                {project.title}
-            </h1>
-          </div>
+         <div class="animate-slideRight max-w-2xl relative z-10">
+           <span class="inline-flex items-center gap-2 px-3 py-1 mb-3 rounded border border-accent/30 bg-black/50 text-accent text-xs font-bold uppercase tracking-widest backdrop-blur-md">
+               <Icon name="tabler:tag" /> {project.category}
+           </span>
+           
+           <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white uppercase leading-tight drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+               {project.title}
+           </h1>
+         </div>
        </div>
     </div>
 
@@ -49,23 +50,23 @@ const { project } = Astro.props;
                 
                 <div class="flex flex-wrap gap-6 md:gap-12 text-gray-300">
                     <div class="flex items-center gap-3">
-                        <i class="ti ti-map-pin text-accent text-lg"></i>
+                        <Icon name="tabler:map-pin" class="text-accent text-lg" />
                         <span class="font-medium">{project.location}</span>
                     </div>
 
                     <div class="flex items-center gap-3">
-                        <i class="ti ti-calendar text-accent text-lg"></i>
+                        <Icon name="tabler:calendar" class="text-accent text-lg" />
                         <span class="font-medium">2024</span>
                     </div>
 
                     <div class="flex items-center gap-3">
-                        <i class="ti ti-building-skyscraper text-accent text-lg"></i>
+                        <Icon name="tabler:building-skyscraper" class="text-accent text-lg" />
                         <span class="font-medium">Cliente Privado</span>
                     </div>
                 </div>
                 
                 <a href="/proyectos" class="hidden md:flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs uppercase font-bold tracking-widest group">
-                    <i class="ti ti-grid-dots group-hover:text-accent transition-colors"></i> Ver todos
+                    <Icon name="tabler:grid-dots" class="group-hover:text-accent transition-colors" /> Ver todos
                 </a>
             </div>
         </div>
@@ -87,7 +88,7 @@ const { project } = Astro.props;
                 <div class="flex gap-4 p-6 rounded-xl border border-gray-800 bg-gray-900/50">
                     <div class="shrink-0 mt-1">
                         <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500">
-                            <i class="ti ti-alert-triangle text-xl"></i>
+                            <Icon name="tabler:alert-triangle" class="text-xl" />
                         </div>
                     </div>
                     <div>
@@ -99,7 +100,7 @@ const { project } = Astro.props;
                 <div class="flex gap-4 p-6 rounded-xl border border-gray-800 bg-gray-900/50">
                     <div class="shrink-0 mt-1">
                         <div class="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center text-green-500">
-                            <i class="ti ti-bulb text-xl"></i>
+                            <Icon name="tabler:bulb" class="text-xl" />
                         </div>
                     </div>
                     <div>
@@ -131,7 +132,7 @@ const { project } = Astro.props;
                 <div class="bg-dark-card rounded-2xl border border-gray-700 overflow-hidden shadow-2xl">
                     <div class="bg-gray-800/50 p-4 border-b border-gray-700 flex justify-between items-center">
                         <h3 class="font-bold text-white flex items-center gap-2">
-                            <i class="ti ti-clipboard-list text-accent"></i> Ficha Técnica
+                            <Icon name="tabler:clipboard-list" class="text-accent" /> Ficha Técnica
                         </h3>
                         <span class="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded uppercase font-bold">Verificado</span>
                     </div>
@@ -139,7 +140,7 @@ const { project } = Astro.props;
                     <div class="divide-y divide-gray-800">
                         {project.specs.map((spec) => (
                             <div class="flex items-start gap-3 p-4 hover:bg-white/5 transition-colors">
-                                <i class="ti ti-check text-accent mt-0.5 shrink-0"></i>
+                                <Icon name="tabler:check" class="text-accent mt-0.5 shrink-0" />
                                 <span class="text-sm text-gray-300 font-medium">{spec}</span>
                             </div>
                         ))}
@@ -153,7 +154,8 @@ const { project } = Astro.props;
                     <p class="text-gray-400 text-xs mb-6 relative z-10">Realizamos estudios de viabilidad y presupuesto en 24h.</p>
                     
                     <a href="#contacto" class="relative z-10 w-full inline-flex justify-center items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold py-3 rounded-lg transition-all shadow-lg shadow-accent/20 transform group-hover:-translate-y-1">
-                        Solicitar Presupuesto <i class="ti ti-arrow-right"></i>
+                        Solicitar Presupuesto 
+                        <Icon name="tabler:arrow-right" />
                     </a>
                 </div>
 
