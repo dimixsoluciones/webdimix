@@ -3,37 +3,37 @@ const services = [
   {
     title: "Instalaciones Eléctricas",
     desc: "Cableado completo para obra nueva y reformas.",
-    img: "https://images.unsplash.com/photo-1544724569-5f546fd6dd2d?q=80&w=2000&auto=format&fit=crop",
+    img: "/img/instalaciones-electricas.webp",
     href: "/servicios/instalaciones/electricas"
   },
   {
     title: "Instalaciones Fotovoltaicas",
     desc: "Instalación fotovoltaica para autoconsumo.",
-    img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2000&auto=format&fit=crop",
+    img: "/img/instalaciones-fotovoltaicas.webp",
     href: "/servicios/instalaciones/fotovoltaicas"
   },
   {
     title: "Cuadros Eléctricos",
     desc: "Actualización a normativa y aumento de potencia.",
-    img: "https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=2000&auto=format&fit=crop",
+    img: "/img/cuadros-electricos.webp",
     href: "/servicios/instalaciones/cuadros-electricos"
   },
   {
     title: "Reformas Eléctricas",
     desc: "Adecuación y modernización de instalaciones en reformas.",
-    img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2000&auto=format&fit=crop",
+    img: "/img/reformas-electricas.webp",
     href: "/servicios/instalaciones/reformas-electricas"
   },
   {
     title: "Instalaciones de Climatización",
     desc: "Equipos de frío y calor de alta eficiencia energética.",
-    img: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2000&auto=format&fit=crop",
+    img: "/img/instalaciones-climatizacion.webp",
     href: "/servicios/instalaciones/climatizacion"
   },
   {
     title: "CCTV y Antenas",
     desc: "Videovigilancia y señal de TV para tu hogar o negocio.",
-    img: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2000&auto=format&fit=crop",
+    img: "/img/cctv-antenas.webp",
     href: "/servicios/instalaciones/cctv-antenas"
   }
 ];
@@ -58,13 +58,17 @@ const services = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {services.map((service) => (
+      {services.map((service, index) => (
         <a href={service.href} class="group relative h-[400px] w-full rounded-2xl overflow-hidden shadow-lg cursor-pointer block">
           
           <div class="absolute inset-0 bg-gray-900">
             <img 
               src={service.img} 
-              alt={service.title} 
+              alt={service.title}
+              width="600"
+              height="400"
+              loading="lazy"
+              decoding="async"
               class="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-100"
             />
           </div>

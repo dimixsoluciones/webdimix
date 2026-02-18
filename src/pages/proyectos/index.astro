@@ -17,7 +17,7 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
     <PageHeader 
       title="Nuestros Proyectos" 
       subtitle="Calidad que habla por sí sola"
-      bgImage="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2000&auto=format&fit=crop"
+      bgImage="/img/reforma-integral.webp"
     />
 
     <section class="py-20 text-white relative">
@@ -47,7 +47,11 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
               
               <img 
                 src={project.image} 
-                alt={project.title} 
+                alt={project.title}
+                width="600"
+                height="400"
+                loading="lazy"
+                decoding="async"
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
               />
               

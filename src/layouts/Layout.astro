@@ -1,22 +1,37 @@
 ---
 import '../styles/global.css';
+
+// Fuentes: Fontsource ya maneja "font-display: swap" automáticamente para evitar bloqueo
 import '@fontsource/inter';
 import '@fontsource/poppins';
 
-// Importamos iconos Tabler para toda la web
+// ELIMINADO: import '@tabler/icons-webfont/dist/tabler-icons.min.css'; 
+// (Ya no necesitamos cargar ese CSS gigante)
+
+interface Props {
+  title: string;
+  description?: string; // Añadimos prop de descripción para SEO
+}
+
+const { title, description = "Expertos en instalaciones eléctricas en Madrid. Servicio 24h, rápido y seguro." } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Dimix Soluciones | Electricistas en Madrid</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-	</head>
-	<body class="bg-dark-bg text-text-white antialiased selection:bg-accent selection:text-white">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-dark-bg text-gray-100 antialiased selection:bg-accent selection:text-white overflow-x-hidden">
+    <slot />
+  </body>
 </html>

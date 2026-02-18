@@ -12,8 +12,11 @@
     "@fontsource/inter": "^5.2.8",
     "@fontsource/poppins": "^5.2.7",
     "@fontsource/roboto-mono": "^5.2.8",
+    "@iconify-json/tabler": "^1.2.26",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.1",
+    "astro-icon": "^1.1.5",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18"
   }
 }

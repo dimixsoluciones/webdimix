@@ -8,13 +8,21 @@ interface Props {
 const { 
   title, 
   subtitle = "Soluciones Profesionales", 
-  bgImage = "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop" 
+  bgImage = "/img/hero.webp" 
 } = Astro.props;
 ---
 
 <section class="relative pt-28 pb-12 lg:pt-36 lg:pb-16 overflow-hidden bg-dark-bg">
   <div class="absolute inset-0 z-0">
-    <img src={bgImage} alt="Fondo" class="w-full h-full object-cover opacity-20" />
+    <img
+      src={bgImage}
+      alt="Fondo"
+      width="1920"
+      height="400"
+      fetchpriority="high"
+      decoding="async"
+      class="w-full h-full object-cover opacity-20"
+    />
     <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/80 to-dark-bg/90"></div>
   </div>
 

@@ -4,7 +4,7 @@ export const services = [
     title: 'Instalaciones Eléctricas',
     subtitle: 'Reformas y Obra Nueva',
     icon: 'ti-home',
-    image: 'https://images.unsplash.com/photo-1544724569-5f546fd6dd2d?q=80&w=2000&auto=format&fit=crop',
+    image: '/img/instalaciones-electricas.webp',
     description: 'Realizamos instalaciones eléctricas completas para viviendas y locales comerciales, cumpliendo estrictamente con el REBT y garantizando la máxima seguridad.',
     features: ['Boletines Eléctricos (CIE)', 'Cambios de tensión', 'Iluminación LED', 'Domótica básica'],
     commonProblems: [
@@ -25,7 +25,7 @@ export const services = [
     title: 'Instalaciones Fotovoltaicas',
     subtitle: 'Autoconsumo Solar',
     icon: 'ti-sun',
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2000&auto=format&fit=crop',
+    image: '/img/instalaciones-fotovoltaicas.webp',
     description: 'Ahorra hasta un 70% en tu factura de la luz generando tu propia energía. Nos encargamos de todo: estudio, instalación y legalización de tu sistema fotovoltaico.',
     features: ['Estudio de ahorro gratuito', 'Legalización y subvenciones', 'Baterías y almacenamiento', 'App de monitorización'],
     commonProblems: [
@@ -46,7 +46,7 @@ export const services = [
     title: 'Cuadros Eléctricos',
     subtitle: 'Seguridad y Normativa',
     icon: 'ti-box',
-    image: 'https://images.unsplash.com/photo-1558402529-d2638a7023e9?q=80&w=2000&auto=format&fit=crop',
+    image: '/img/cuadros-electricos.webp',
     description: 'Actualizamos cuadros antiguos, saneamos cableado y aumentamos potencia. El corazón de tu instalación debe estar sano y cumplir con la normativa vigente.',
     features: ['Protección sobretensiones', 'Diferenciales rearmables', 'Ampliación de potencia', 'Normativa actual'],
     commonProblems: [
@@ -67,7 +67,7 @@ export const services = [
     title: 'Reformas Eléctricas',
     subtitle: 'Adecuación y Mejora',
     icon: 'ti-tools',
-    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2000&auto=format&fit=crop',
+    image: '/img/reformas-electricas.webp',
     description: 'Adaptamos y modernizamos la instalación eléctrica de tu vivienda o local durante una reforma, garantizando seguridad, eficiencia y cumplimiento del REBT.',
     features: ['Adecuación al REBT', 'Coordinación con otros gremios', 'Nuevos puntos de luz y enchufes', 'Certificado final de obra'],
     commonProblems: [
@@ -88,7 +88,7 @@ export const services = [
     title: 'Instalaciones de Climatización',
     subtitle: 'Frío y Calor Eficiente',
     icon: 'ti-wind',
-    image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2000&auto=format&fit=crop',
+    image: '/img/instalaciones-climatizacion.webp',
     description: 'Instalamos y mantenemos sistemas de climatización para viviendas y locales comerciales. Equipos de alta eficiencia energética adaptados a tus necesidades.',
     features: ['Aire acondicionado Split', 'Sistemas multi-split', 'Bomba de calor', 'Mantenimiento anual'],
     commonProblems: [
@@ -109,7 +109,7 @@ export const services = [
     title: 'CCTV y Antenas',
     subtitle: 'Seguridad y Señal',
     icon: 'ti-device-cctv',
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2000&auto=format&fit=crop',
+    image: '/img/cctv-antenas.webp',
     description: 'Instalamos sistemas de videovigilancia CCTV y antenas de TV para viviendas y negocios. Protege tu propiedad y disfruta de la mejor señal en todos tus dispositivos.',
     features: ['Cámaras HD y 4K', 'Visión nocturna', 'Antenas TDT y satélite', 'Acceso remoto desde móvil'],
     commonProblems: [
