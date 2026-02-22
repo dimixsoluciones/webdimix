@@ -10,29 +10,40 @@
   <div class="container mx-auto max-w-7xl px-8 lg:px-20 relative z-10">
     <div class="flex flex-col md:flex-row items-center gap-16 lg:gap-24">
       
-      <div class="w-full md:w-1/2 relative flex justify-center items-center h-[400px]">
-        
-        <svg viewBox="0 0 800 600" class="w-full h-full drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-            <defs>
-                <pattern id="dotPattern" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
-                    <circle cx="2" cy="2" r="2" class="text-gray-700" fill="currentColor" />
-                </pattern>
-            </defs>
-            
-            <path 
-                d="M340,100 C360,80 400,60 440,70 C480,80 500,100 520,130 C540,160 580,180 600,220 C610,240 600,280 580,300 C560,320 550,360 520,380 C490,400 460,450 420,480 C380,510 340,500 300,480 C260,460 220,440 200,400 C180,360 160,320 180,280 C200,240 220,200 250,160 C280,120 310,110 340,100 Z" 
-                fill="url(#dotPattern)" 
-                stroke="none"
-                class="opacity-80"
-            />
-            
-            <g transform="translate(380, 280)"> <circle r="20" class="text-accent animate-ping opacity-75" fill="none" stroke="currentColor" stroke-width="2" />
-                <circle r="8" class="text-accent" fill="currentColor" />
-                <text x="25" y="5" class="text-white text-xs font-mono uppercase tracking-widest font-bold" fill="currentColor">Madrid</text>
-            </g>
+      <!-- MAPA: SVG externo + punto naranja animado superpuesto -->
+      <div class="w-full md:w-1/2 flex justify-center items-center">
+        <div class="map-container">
 
-            <circle cx="450" cy="200" r="3" class="text-gray-500" fill="currentColor" /> <circle cx="300" cy="400" r="3" class="text-gray-500" fill="currentColor" /> <circle cx="500" cy="350" r="3" class="text-gray-500" fill="currentColor" /> </svg>
+          <!-- 
+            ============================================================
+            PASO 1: Copia tu archivo SVG dentro de /public/img/ 
+            en tu proyecto Astro.
 
+            PASO 2: Cambia el src de aquí abajo por la ruta correcta.
+            Ejemplo: si lo llamas "madrid-mapa.svg" → src="/img/madrid-mapa.svg"
+            ============================================================
+          -->
+          <img
+            src="/img/imgeuropa.webp"
+            alt="Mapa Comunidad de Madrid"
+            class="map-img"
+          />
+
+          <!-- 
+            ============================================================
+            PUNTO NARANJA (Madrid capital)
+            Si necesitas mover el punto, ajusta los valores de 
+            top y left en porcentaje (style="top: X%; left: Y%;")
+            hasta que quede justo encima de Madrid en tu SVG.
+            ============================================================
+          -->
+          <div class="map-marker" style="top: 60%; left: 73%;">
+            <span class="ping-ring"></span>
+            <span class="dot"></span>
+            <span class="label">Madrid</span>
+          </div>
+
+        </div>
       </div>
 
       <div class="w-full md:w-1/2 space-y-8">
@@ -82,3 +93,67 @@
     </div>
   </div>
 </section>
+
+<style>
+  .map-container {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .map-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Wrapper del marcador — top/left en % sobre la imagen */
+  .map-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .dot {
+    position: relative;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #E57200;
+    box-shadow: 0 0 10px rgba(229, 114, 0, 0.7);
+    flex-shrink: 0;
+    z-index: 2;
+  }
+
+  .ping-ring {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid #E57200;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ping 2s ease-out infinite;
+    z-index: 1;
+  }
+
+  .label {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: white;
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  @keyframes ping {
+    0%   { transform: translate(-50%, -50%) scale(0.8); opacity: 0.9; }
+    100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+  }
+</style>
