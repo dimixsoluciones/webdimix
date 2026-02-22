@@ -1,14 +1,12 @@
 export const services = [
   {
-    // CAMBIO: Slug corregido para que el filtro funcione
     slug: 'instalaciones/electricas',
     title: 'Instalaciones Eléctricas',
     subtitle: 'Reformas y Obra Nueva',
-    // CAMBIO: Nombre de icono corregido
-    icon: 'tabler:home', 
+    icon: 'tabler:home',
     image: '/img/instalaciones-electricas.webp',
     description: 'Realizamos instalaciones eléctricas completas para viviendas y locales comerciales, cumpliendo estrictamente con el REBT y garantizando la máxima seguridad.',
-    features: ['Boletines Eléctricos (CIE)', 'Cambios de tensión', 'Iluminación LED', 'Domótica básica'],
+    features: ['Boletines Eléctricos (CIE)', 'Iluminación LED', 'Domótica básica'],
     commonProblems: [
       { title: 'Instalación Antigua', desc: 'Cableado obsoleto y peligroso.' },
       { title: 'Reformas Integrales', desc: 'Necesidad de mover puntos de luz y enchufes.' },
@@ -23,29 +21,32 @@ export const services = [
     ]
   },
   {
-    // CAMBIO: Movido a la categoría "renovables"
     slug: 'renovables/fotovoltaicas',
     title: 'Instalaciones Fotovoltaicas',
     subtitle: 'Autoconsumo Solar',
     icon: 'tabler:sun',
     image: '/img/instalaciones-fotovoltaicas.webp',
-    description: 'Ahorra hasta un 70% en tu factura de la luz generando tu propia energía. Nos encargamos de todo: estudio, instalación y legalización de tu sistema fotovoltaico.',
-    features: ['Estudio de ahorro gratuito', 'Legalización y subvenciones', 'Baterías y almacenamiento', 'App de monitorización'],
+    description: 'Instalamos sistemas fotovoltaicos de autoconsumo de hasta 10kW para chalets y viviendas unifamiliares. Nos encargamos del estudio, instalación y tramitación para que empieces a generar desde el primer día.',
+    features: ['Estudio de ahorro gratuito', 'Instalaciones hasta 10kW', 'Baterías y almacenamiento', 'App de monitorización'],
+    // CAMPO NOTE: Se renderiza como aviso destacado separado de los features
+    note: {
+      icon: 'tabler:info-circle',
+      text: 'No gestionamos subvenciones. Nos centramos en lo que hacemos bien: instalar rápido y con garantías. Sin papeleo extra, sin esperas.'
+    },
     commonProblems: [
       { title: 'Factura Alta', desc: 'Costes de electricidad inasumibles.' },
       { title: 'Sostenibilidad', desc: 'Deseo de reducir la huella de carbono.' },
       { title: 'Independencia', desc: 'Menor dependencia de las compañías eléctricas.' },
-      { title: 'Subvenciones', desc: 'Aprovechar ayudas europeas actuales.' }
+      { title: 'Chalet o Unifamiliar', desc: 'Vivienda con cubierta propia ideal para autoconsumo.' }
     ],
     process: [
       { step: '01', title: 'Estudio', desc: 'Cálculo de producción y ahorro estimado.' },
       { step: '02', title: 'Instalación', desc: 'Montaje de paneles e inversor en 1-2 días.' },
-      { step: '03', title: 'Legalización', desc: 'Trámites con Industria y Ayuntamiento.' },
+      { step: '03', title: 'Tramitación', desc: 'Gestión de trámites con Industria y Ayuntamiento.' },
       { step: '04', title: 'Ahorro', desc: 'Empiezas a generar desde el primer día.' }
     ]
   },
   {
-    // CAMBIO: Movido a la categoría "mantenimiento"
     slug: 'mantenimiento/cuadros-electricos',
     title: 'Cuadros Eléctricos',
     subtitle: 'Seguridad y Normativa',
@@ -93,8 +94,8 @@ export const services = [
     subtitle: 'Frío y Calor Eficiente',
     icon: 'tabler:wind',
     image: '/img/instalaciones-climatizacion.webp',
-    description: 'Instalamos y mantenemos sistemas de climatización para viviendas y locales comerciales. Equipos de alta eficiencia energética adaptados a tus necesidades.',
-    features: ['Aire acondicionado Split', 'Sistemas multi-split', 'Bomba de calor', 'Mantenimiento anual'],
+    description: 'Instalamos sistemas de aire acondicionado tipo split y multi-split para viviendas y locales comerciales. Equipos de alta eficiencia energética adaptados a tus necesidades.',
+    features: ['Aire acondicionado Split', 'Sistemas multi-split'],
     commonProblems: [
       { title: 'Calor en Verano', desc: 'Vivienda o local sin climatización adecuada.' },
       { title: 'Eficiencia', desc: 'Equipos antiguos con alto consumo eléctrico.' },

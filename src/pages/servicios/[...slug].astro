@@ -4,7 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Contact from '../../components/Contact.astro';
 import { services } from '../../data/services';
-import { Icon } from 'astro-icon/components'; // <--- IMPORTANTE
+import { Icon } from 'astro-icon/components';
 
 export async function getStaticPaths() {
   return services.map((service) => ({
@@ -62,6 +62,16 @@ const otherServices = services.filter(s => s.slug !== service.slug);
                 </div>
               ))}
             </div>
+
+            {/* NUEVO: Aviso destacado si el servicio tiene un campo "note" */}
+            {service.note && (
+              <div class="service-note">
+                <div class="service-note-icon">
+                  <Icon name={service.note.icon} />
+                </div>
+                <p class="service-note-text">{service.note.text}</p>
+              </div>
+            )}
           </section>
 
           <section class="content-section">
@@ -238,6 +248,32 @@ const otherServices = services.filter(s => s.slug !== service.slug);
     justify-content: center;
     color: var(--color-accent);
     font-size: 12px;
+  }
+
+  /* ── NOTE / AVISO DESTACADO ── */
+  .service-note {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(229, 114, 0, 0.35);
+    background: rgba(229, 114, 0, 0.07);
+  }
+
+  .service-note-icon {
+    flex-shrink: 0;
+    font-size: 1.35rem;
+    color: var(--color-accent);
+    margin-top: 2px;
+  }
+
+  .service-note-text {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #D1D5DB;
   }
 
   /* ── PROBLEMS ── */

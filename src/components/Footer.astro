@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components'; // Importamos el componente
+import { Icon } from 'astro-icon/components';
 const currentYear = new Date().getFullYear();
 ---
 
@@ -35,10 +35,10 @@ const currentYear = new Date().getFullYear();
           <span class="w-2 h-2 bg-accent rounded-full"></span>
           Navegación
         </h4>
+        <!-- CAMBIO: Eliminado enlace a /proyectos -->
         <ul class="space-y-4">
           <li><a href="/" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:chevron-right" class="text-xs" /> Inicio</a></li>
           <li><a href="/empresa" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:chevron-right" class="text-xs" /> Empresa</a></li>
-          <li><a href="/proyectos" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:chevron-right" class="text-xs" /> Proyectos</a></li>
           <li><a href="#contacto" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:chevron-right" class="text-xs" /> Contacto</a></li>
           <li><a href="#faq" class="text-gray-400 hover:text-accent transition-colors flex items-center gap-2"><Icon name="tabler:chevron-right" class="text-xs" /> FAQ</a></li>
         </ul>
