@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import Contact from '../../components/Contact.astro';
 ---
 
-<Layout title="Respuesta Rápida 24h | Dimix Soluciones Madrid">
+<Layout title="Servicio de Urgencias Eléctricas | Dimix Soluciones Madrid">
   <Header />
   <main style="background-color: var(--color-dark-bg); color: var(--color-text-white);">
 
@@ -13,10 +13,10 @@ import Contact from '../../components/Contact.astro';
     <div class="ep-hero">
       <div class="ep-hero-inner">
         <div class="animate-slideRight">
-          <span class="ep-badge"><i class="ti ti-clock-bolt"></i> Disponibilidad 24/7</span>
+          <span class="ep-badge"><i class="ti ti-clock-bolt"></i> Servicio de Urgencias</span>
           <h1 class="ep-title">Respuesta Rápida</h1>
           <p class="ep-subtitle">Urgencias Eléctricas</p>
-          <p class="ep-intro">Una avería eléctrica no espera. En Dimix Soluciones lo sabemos, por eso mantenemos un equipo de técnicos disponible las 24 horas del día, los 365 días del año, para estar en tu domicilio o negocio en menos de 60 minutos.</p>
+          <p class="ep-intro">Una avería eléctrica necesita atención inmediata. En Dimix Soluciones mantenemos un equipo de técnicos disponible en horario de urgencias — de lunes a viernes hasta las 22:30 h, y los fines de semana hasta las 15:00 h — para estar en tu domicilio o negocio lo más rápido posible</p>
           <div class="ep-actions">
             <a href="tel:+34600000000" class="ep-btn-primary"><i class="ti ti-phone"></i> Llamar ahora</a>
             <a href="/empresa" class="ep-btn-secondary"><i class="ti ti-arrow-left"></i> Volver a Empresa</a>
@@ -31,10 +31,9 @@ import Contact from '../../components/Contact.astro';
 
     <!-- STATS -->
     <div class="ep-stats-bar">
-      <div class="ep-stat"><span class="ep-stat-num">60 min</span><span class="ep-stat-label">Tiempo de llegada garantizado</span></div>
-      <div class="ep-stat"><span class="ep-stat-num">24/7</span><span class="ep-stat-label">Disponibilidad todo el año</span></div>
-      <div class="ep-stat"><span class="ep-stat-num">365 días</span><span class="ep-stat-label">Sin festivos ni excepciones</span></div>
-      <div class="ep-stat"><span class="ep-stat-num">+500</span><span class="ep-stat-label">Urgencias resueltas al año</span></div>
+      <div class="ep-stat"><span class="ep-stat-num">2-3 h</span><span class="ep-stat-label">Tiempo de llegada garantizado</span></div>
+      <div class="ep-stat"><span class="ep-stat-num">L–V hasta 22:30h</span><span class="ep-stat-label">Urgencias entre semana</span></div>
+      <div class="ep-stat"><span class="ep-stat-num">S–D hasta 15:00h</span><span class="ep-stat-label">Urgencias fin de semana</span></div>
     </div>
 
     <!-- CONTENIDO -->
@@ -42,13 +41,21 @@ import Contact from '../../components/Contact.astro';
       <div class="ep-section">
         <h2>¿Cómo funciona nuestro servicio de urgencias?</h2>
         <ul class="ep-list">
-          <li>Cuando nos llamas, un técnico cualificado evalúa la gravedad de la avería por teléfono.</li><li>La unidad móvil más cercana a tu ubicación se pone en marcha de inmediato.</li><li>Llegamos con material de uso común para resolver la mayoría de averías en una sola visita.</li><li>Si el problema requiere materiales específicos, te damos un presupuesto cerrado antes de continuar.</li>
+          <li>Atendemos urgencias eléctricas de lunes a viernes hasta las 22:30 h, y sábados y domingos hasta las 15:00 h. Fuera de este horario, puedes dejarnos un mensaje y te contactamos a primera hora.</li>
+          <li>Cuando nos llamas, un técnico cualificado evalúa la gravedad de la avería por teléfono.</li>
+          <li>La unidad móvil más cercana a tu ubicación se pone en marcha de inmediato.</li>
+          <li>Llegamos con material de uso común para resolver la mayoría de averías en una sola visita.</li>
+          <li>Si el problema requiere materiales específicos, te damos un presupuesto cerrado antes de continuar.</li>
         </ul>
       </div>
       <div class="ep-section">
         <h2>¿Para qué tipo de averías llamarnos?</h2>
         <ul class="ep-list">
-          <li>Apagones totales o parciales sin causa aparente.</li><li>Saltos del diferencial o del ICP de forma continuada.</li><li>Cortocircuitos, chispas o cables con olor a quemado.</li><li>Averías en negocios, restaurantes o locales comerciales.</li><li>Fallos eléctricos que afectan a equipos críticos.</li>
+          <li>Apagones totales o parciales sin causa aparente.</li>
+          <li>Saltos del diferencial o del ICP de forma continuada.</li>
+          <li>Cortocircuitos, chispas o cables con olor a quemado.</li>
+          <li>Averías en negocios, restaurantes o locales comerciales.</li>
+          <li>Fallos eléctricos que afectan a equipos críticos.</li>
         </ul>
       </div>
     </div>
@@ -153,7 +160,7 @@ import Contact from '../../components/Contact.astro';
 /* STATS */
 .ep-stats-bar {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-bottom: 1px solid #1F2937;
 }
 .ep-stat {
@@ -163,7 +170,7 @@ import Contact from '../../components/Contact.astro';
 }
 .ep-stat:last-child { border-right: none; }
 .ep-stat-num {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 900;
   color: var(--color-accent);
   font-family: var(--font-display);
@@ -228,11 +235,12 @@ import Contact from '../../components/Contact.astro';
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .ep-stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .ep-stats-bar { grid-template-columns: repeat(3, 1fr); }
   .ep-stat { border-bottom: 1px solid #1F2937; }
 }
 @media (max-width: 480px) {
-  .ep-stats-bar { grid-template-columns: 1fr 1fr; }
+  .ep-stats-bar { grid-template-columns: 1fr; }
+  .ep-stat { border-right: none; }
 }
 
 .animate-slideRight {
