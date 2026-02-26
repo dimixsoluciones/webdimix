@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   // URL de tu sitio para generar el sitemap correctamente
-  site: 'https://dimixsoluciones.com',
+site: 'https://www.dimixsoluciones.com',
   
   // Integraciones
   integrations: [
