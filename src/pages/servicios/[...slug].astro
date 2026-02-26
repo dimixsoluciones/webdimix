@@ -17,8 +17,12 @@ const { service } = Astro.props;
 const otherServices = services.filter(s => s.slug !== service.slug);
 ---
 
-<Layout title={`${service.title} | Servicios Dimix Madrid`}>
-  <Header />
+<Layout 
+  title={`${service.title} en Madrid | Dimix Soluciones`}
+  description={service.description}
+  image={service.image}
+>  
+<Header />
 
   <main style="background-color: var(--color-dark-bg); color: var(--color-text-white);">
 
