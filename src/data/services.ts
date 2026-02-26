@@ -91,7 +91,7 @@ export const services = [
   // CATEGORÍA: MANTENIMIENTO
   // ═══════════════════════════════════════════════════════════
   {
-    slug: 'mantenimiento/cuadros-electricos',
+    slug: 'instalaciones/cuadros-electricos',
     title: 'Cuadros Eléctricos',
     subtitle: 'Seguridad y Normativa',
     icon: 'tabler:box',
@@ -116,7 +116,7 @@ export const services = [
   // CATEGORÍA: RENOVABLES
   // ═══════════════════════════════════════════════════════════
   {
-    slug: 'renovables/fotovoltaicas',
+    slug: 'instalaciones/fotovoltaicas',
     title: 'Instalaciones Fotovoltaicas',
     subtitle: 'Autoconsumo Solar',
     icon: 'tabler:sun',
