@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dimixsoluciones.com/sitemap-index.xml
+Sitemap: https://www.dimixsoluciones.com/sitemap-index.xml
