@@ -1,4 +1,7 @@
 export const services = [
+  // ═══════════════════════════════════════════════════════════
+  // CATEGORÍA: INSTALACIONES
+  // ═══════════════════════════════════════════════════════════
   {
     slug: 'instalaciones/electricas',
     title: 'Instalaciones Eléctricas',
@@ -18,53 +21,6 @@ export const services = [
       { step: '02', title: 'Diseño', desc: 'Planteamos la distribución más eficiente.' },
       { step: '03', title: 'Ejecución', desc: 'Rozas, tubo y cableado con mínima molestia.' },
       { step: '04', title: 'Certificación', desc: 'Emisión del boletín oficial.' }
-    ]
-  },
-  {
-    slug: 'instalaciones/fotovoltaicas',
-    title: 'Instalaciones Fotovoltaicas',
-    subtitle: 'Autoconsumo Solar',
-    icon: 'tabler:sun',
-    image: '/img/instalaciones-fotovoltaicas.webp',
-    description: 'Instalamos sistemas fotovoltaicos de autoconsumo de hasta 10kW para chalets y viviendas unifamiliares. Nos encargamos del estudio, instalación y tramitación para que empieces a generar desde el primer día.',
-    features: ['Estudio de ahorro gratuito', 'Instalaciones hasta 10kW', 'Baterías y almacenamiento', 'App de monitorización'],
-    // CAMPO NOTE: Se renderiza como aviso destacado separado de los features
-    note: {
-      icon: 'tabler:info-circle',
-      text: 'No gestionamos subvenciones. Nos centramos en lo que hacemos bien: instalar rápido y con garantías. Sin papeleo extra, sin esperas.'
-    },
-    commonProblems: [
-      { title: 'Factura Alta', desc: 'Costes de electricidad inasumibles.' },
-      { title: 'Sostenibilidad', desc: 'Deseo de reducir la huella de carbono.' },
-      { title: 'Independencia', desc: 'Menor dependencia de las compañías eléctricas.' },
-      { title: 'Chalet o Unifamiliar', desc: 'Vivienda con cubierta propia ideal para autoconsumo.' }
-    ],
-    process: [
-      { step: '01', title: 'Estudio', desc: 'Cálculo de producción y ahorro estimado.' },
-      { step: '02', title: 'Instalación', desc: 'Montaje de paneles e inversor en 1-2 días.' },
-      { step: '03', title: 'Tramitación', desc: 'Gestión de trámites con Industria y Ayuntamiento.' },
-      { step: '04', title: 'Ahorro', desc: 'Empiezas a generar desde el primer día.' }
-    ]
-  },
-  {
-    slug: 'instalaciones/cuadros-electricos',
-    title: 'Cuadros Eléctricos',
-    subtitle: 'Seguridad y Normativa',
-    icon: 'tabler:box',
-    image: '/img/cuadros-electricos.webp',
-    description: 'Actualizamos cuadros antiguos, saneamos cableado y aumentamos potencia. El corazón de tu instalación debe estar sano y cumplir con la normativa vigente.',
-    features: ['Protección sobretensiones', 'Diferenciales rearmables', 'Ampliación de potencia', 'Normativa actual'],
-    commonProblems: [
-      { title: 'Saltos', desc: 'El ICP salta al poner la lavadora.' },
-      { title: 'Peligro', desc: 'Cuadros de madera o sin tapa.' },
-      { title: 'Ampliación', desc: 'Necesitas más circuitos para aire acondicionado.' },
-      { title: 'Ruidos', desc: 'Zumbidos en los automáticos.' }
-    ],
-    process: [
-      { step: '01', title: 'Revisión', desc: 'Chequeamos el estado actual.' },
-      { step: '02', title: 'Presupuesto', desc: 'Valoramos materiales y mano de obra.' },
-      { step: '03', title: 'Cambio', desc: 'Sustitución rápida (corte de luz mínimo).' },
-      { step: '04', title: 'Test', desc: 'Comprobación de disparo y tierras.' }
     ]
   },
   {
@@ -128,6 +84,60 @@ export const services = [
       { step: '02', title: 'Diseño', desc: 'Planificamos la ubicación óptima de cámaras y antenas.' },
       { step: '03', title: 'Instalación', desc: 'Montaje de equipos y cableado.' },
       { step: '04', title: 'Configuración', desc: 'Ajuste de imagen, grabación y acceso remoto.' }
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // CATEGORÍA: MANTENIMIENTO
+  // ═══════════════════════════════════════════════════════════
+  {
+    slug: 'mantenimiento/cuadros-electricos',
+    title: 'Cuadros Eléctricos',
+    subtitle: 'Seguridad y Normativa',
+    icon: 'tabler:box',
+    image: '/img/cuadros-electricos.webp',
+    description: 'Actualizamos cuadros antiguos, saneamos cableado y aumentamos potencia. El corazón de tu instalación debe estar sano y cumplir con la normativa vigente.',
+    features: ['Protección sobretensiones', 'Diferenciales rearmables', 'Ampliación de potencia', 'Normativa actual'],
+    commonProblems: [
+      { title: 'Saltos', desc: 'El ICP salta al poner la lavadora.' },
+      { title: 'Peligro', desc: 'Cuadros de madera o sin tapa.' },
+      { title: 'Ampliación', desc: 'Necesitas más circuitos para aire acondicionado.' },
+      { title: 'Ruidos', desc: 'Zumbidos en los automáticos.' }
+    ],
+    process: [
+      { step: '01', title: 'Revisión', desc: 'Chequeamos el estado actual.' },
+      { step: '02', title: 'Presupuesto', desc: 'Valoramos materiales y mano de obra.' },
+      { step: '03', title: 'Cambio', desc: 'Sustitución rápida (corte de luz mínimo).' },
+      { step: '04', title: 'Test', desc: 'Comprobación de disparo y tierras.' }
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // CATEGORÍA: RENOVABLES
+  // ═══════════════════════════════════════════════════════════
+  {
+    slug: 'renovables/fotovoltaicas',
+    title: 'Instalaciones Fotovoltaicas',
+    subtitle: 'Autoconsumo Solar',
+    icon: 'tabler:sun',
+    image: '/img/instalaciones-fotovoltaicas.webp',
+    description: 'Instalamos sistemas fotovoltaicos de autoconsumo de hasta 10kW para chalets y viviendas unifamiliares. Nos encargamos del estudio, instalación y tramitación para que empieces a generar desde el primer día.',
+    features: ['Estudio de ahorro gratuito', 'Instalaciones hasta 10kW', 'Baterías y almacenamiento', 'App de monitorización'],
+    note: {
+      icon: 'tabler:info-circle',
+      text: 'No gestionamos subvenciones. Nos centramos en lo que hacemos bien: instalar rápido y con garantías. Sin papeleo extra, sin esperas.'
+    },
+    commonProblems: [
+      { title: 'Factura Alta', desc: 'Costes de electricidad inasumibles.' },
+      { title: 'Sostenibilidad', desc: 'Deseo de reducir la huella de carbono.' },
+      { title: 'Independencia', desc: 'Menor dependencia de las compañías eléctricas.' },
+      { title: 'Chalet o Unifamiliar', desc: 'Vivienda con cubierta propia ideal para autoconsumo.' }
+    ],
+    process: [
+      { step: '01', title: 'Estudio', desc: 'Cálculo de producción y ahorro estimado.' },
+      { step: '02', title: 'Instalación', desc: 'Montaje de paneles e inversor en 1-2 días.' },
+      { step: '03', title: 'Tramitación', desc: 'Gestión de trámites con Industria y Ayuntamiento.' },
+      { step: '04', title: 'Ahorro', desc: 'Empiezas a generar desde el primer día.' }
     ]
   }
 ];
