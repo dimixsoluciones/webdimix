@@ -3,27 +3,27 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { services } from '../../data/services';
-import { Icon } from 'astro-icon/components'; // <--- IMPORTANTE
+import { Icon } from 'astro-icon/components';
 
 const categorias = [
   {
     id: 'instalaciones',
     label: 'Instalaciones',
-    icon: 'tabler:home', // Corregido
+    icon: 'tabler:home',
     desc: 'Proyectos eléctricos completos para viviendas y locales',
     slugPrefix: 'instalaciones',
   },
   {
     id: 'mantenimiento',
     label: 'Mantenimiento',
-    icon: 'tabler:tool', // Corregido
+    icon: 'tabler:tool',
     desc: 'Urgencias, reparaciones y actualización de cuadros',
     slugPrefix: 'mantenimiento',
   },
   {
     id: 'renovables',
     label: 'Renovables',
-    icon: 'tabler:sun', // Corregido
+    icon: 'tabler:sun',
     desc: 'Energía solar y movilidad eléctrica sostenible',
     slugPrefix: 'renovables',
   },
@@ -41,7 +41,7 @@ const servicesByCategory = categorias.map(cat => ({
 >  
 <Header />
 
-  <main style="background-color: var(--color-dark-bg); color: var(--color-text-white);">
+  <main class="w-full overflow-x-hidden" style="background-color: var(--color-dark-bg); color: var(--color-text-white);">
     <div class="servicios-page">
 
       <aside class="left-panel">
@@ -97,10 +97,10 @@ const servicesByCategory = categorias.map(cat => ({
             <div class="panel-grid">
               {cat.items.length > 0 ? (
                 cat.items.map((service, j) => (
-                  <a
-                    href={`/servicios/${service.slug}`}
+                  <a 
+                    href={"/servicios/" + service.slug}
                     class="svc-card"
-                    style={`--i: ${j}`}
+                    style={"--i: " + j}
                   >
                     <div class="svc-img-wrap">
                       <img src={service.image} alt={service.title} class="svc-img" />
@@ -143,18 +143,20 @@ const servicesByCategory = categorias.map(cat => ({
 </Layout>
 
 <script>
-  const buttons = document.querySelectorAll('.cat-btn');
-  const panels = document.querySelectorAll('.cat-panel');
+  document.addEventListener('astro:page-load', () => {
+    const buttons = document.querySelectorAll('.cat-btn');
+    const panels = document.querySelectorAll('.cat-panel');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.getAttribute('data-cat');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-cat');
 
-      buttons.forEach(b => b.classList.remove('active'));
-      panels.forEach(p => p.classList.remove('active'));
+        buttons.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
 
-      btn.classList.add('active');
-      document.querySelector(`[data-panel="${cat}"]`)?.classList.add('active');
+        btn.classList.add('active');
+        document.querySelector(`[data-panel="${cat}"]`)?.classList.add('active');
+      });
     });
   });
 </script>
@@ -164,7 +166,7 @@ const servicesByCategory = categorias.map(cat => ({
 .servicios-page {
   display: grid;
   grid-template-columns: 320px 1fr;
-  min-height: calc(100vh - 80px); /* Cambiado a min-height */
+  min-height: calc(100vh - 80px);
   margin-top: 80px;
   overflow: hidden;
 }
@@ -534,11 +536,29 @@ const servicesByCategory = categorias.map(cat => ({
 
 /* ── RESPONSIVE MÓVIL ── */
 @media (max-width: 768px) {
+  /* AQUÍ ESTÁN LOS CAMBIOS PARA MÓVIL */
+  .servicios-page * {
+    box-sizing: border-box;
+  }
+
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  main {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  
   .servicios-page {
     grid-template-columns: 1fr;
     height: auto;
-    overflow: visible;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
+  
   .left-panel {
     height: auto;
     overflow: visible;
@@ -546,14 +566,17 @@ const servicesByCategory = categorias.map(cat => ({
     border-right: none;
     border-bottom: 1px solid #1F2937;
   }
+  
   .right-panel {
     overflow: visible;
     height: auto;
   }
+  
   .cat-panel {
     height: auto;
     padding: 1.5rem;
   }
+  
   .panel-grid {
     grid-template-columns: 1fr;
   }
